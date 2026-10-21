@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Materi Ekonomi</title>
+<style>
+:root{color-scheme:light;--g:#123c35;--ac:#1e6557;--acb:#e8f4ef;--gold:#e8b84a;--bg:#f3f7f5;--card:#fff;--tx:#172522;--mu:#5d6b66;--bd:#dce5e0;--ok:#1b7a3d;--okb:#e3f5e8;--no:#b42318;--nob:#fde8e6;--th:58px}
+*{box-sizing:border-box}html{scroll-padding-top:calc(var(--th) + 60px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.8 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--ac)}button{font:inherit}
+.top{position:sticky;top:0;z-index:20;background:#123c35;color:#fff;padding:env(safe-area-inset-top,0) 16px 0}
+.ti{max-width:1180px;margin:auto;height:var(--th);display:flex;align-items:center;gap:12px}
+.logo{width:38px;height:38px;border-radius:11px;background:var(--gold);color:#123c35;display:grid;place-items:center;font-weight:900;font-size:19px;flex:none}
+.top h1{font-size:16px;margin:0;line-height:1.2}.top small{display:block;color:#c9ded7;font-size:12px}
+.sp{flex:1}.pill{font-size:12px;background:#ffffff1d;border:1px solid #ffffff36;padding:6px 11px;border-radius:99px;white-space:nowrap}
+#mb{display:none;place-items:center;width:40px;height:40px;flex:none;background:#ffffff1d;border:1px solid #ffffff36;color:#fff;border-radius:11px;font-size:21px;line-height:1;padding:0}
+.wrap{max-width:1180px;margin:20px auto;padding:0 16px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:18px;align-items:start}
+.side{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:10px;position:sticky;top:calc(var(--th) + 14px + env(safe-area-inset-top,0px));max-height:calc(100vh - var(--th) - 30px);overflow:auto;font-size:14px;line-height:1.45}
+.si{display:flex;gap:9px;align-items:center;padding:9px 10px;border-radius:10px;color:var(--tx);text-decoration:none;margin-bottom:2px}
+.si:hover{background:var(--acb)}.si.on{background:var(--acb);color:var(--ac);font-weight:700}
+.si .n{width:26px;height:26px;border-radius:8px;background:var(--acb);color:var(--ac);display:grid;place-items:center;font-size:12px;font-weight:800;flex:none}
+.si.on .n{background:var(--g);color:#fff}.si em{margin-left:auto;font-style:normal;font-size:11px;color:var(--mu)}
+.si.sub{margin-left:20px;padding:7px 10px;font-size:13px;color:var(--mu);border-left:2px solid var(--bd);border-radius:0 8px 8px 0}.si.sub.on{border-left-color:var(--gold);color:var(--ac)}
+.si.ex{margin-left:20px;font-size:13px;font-weight:600;color:var(--ac)}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:30px 36px 24px;min-height:70vh;min-width:0}
+.panel p,.panel li,.panel .box,.panel .q,.panel details,.panel .f,.panel .score{max-width:46rem}
+h1{font-size:1.85rem;line-height:1.25;margin:.2em 0 .15em;color:var(--g);letter-spacing:-.01em}
+h2{font-size:1.25rem;line-height:1.35;margin:1.9em 0 .6em;padding:2px 0 2px 12px;border-left:5px solid var(--gold);color:var(--ac)}
+h3{font-size:1.05rem;margin:1.4em 0 .3em;color:var(--ac)}
+p{margin:.75em 0}ul{padding-left:1.3em;margin:.6em 0}li{margin:.4em 0}li::marker{color:var(--ac)}
+.mu{color:var(--mu);font-size:.93rem}h1+.mu{font-size:1rem;margin-top:0}
+.crumb{font-size:.82rem;color:var(--mu);margin-bottom:6px}.crumb a{color:var(--ac);text-decoration:none;font-weight:600}
+.hero{background:linear-gradient(115deg,#123c35,#246b5a);color:#fff;border-radius:16px;padding:24px;margin-bottom:18px}
+.hero h1{color:#fff;margin:0 0 6px}.hero p{color:#d8e9e2;margin:.2em 0 .8em}.hero .mu{color:#c9ded7}
+.bar{height:9px;background:var(--bd);border-radius:9px;overflow:hidden;margin:10px 0 6px}.hero .bar{background:#ffffff30}
+.bar i{display:block;height:100%;background:var(--ac);border-radius:9px}.hero .bar i{background:var(--gold)}
+.card{display:block;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:15px 18px;margin:12px 0;color:inherit;text-decoration:none;line-height:1.5}
+.card:hover{border-color:var(--ac)}.card b{display:block;font-size:1.02rem}.card span{color:var(--mu);font-size:.88rem}
+.num{display:inline-grid;place-items:center;min-width:28px;height:28px;background:var(--g);color:#fff;border-radius:8px;margin-right:10px;font-size:.88rem}
+.tabs{display:flex;gap:4px;margin:16px 0;position:sticky;top:calc(var(--th) + env(safe-area-inset-top,0px));background:var(--acb);padding:4px;border-radius:12px;z-index:5}
+.tabs a{flex:1;text-align:center;padding:9px;border-radius:9px;color:var(--mu);text-decoration:none;font-weight:700;font-size:.95rem}
+.tabs a.on{background:var(--g);color:#fff}
+.box{background:var(--acb);border-left:5px solid var(--ac);border-radius:4px 12px 12px 4px;padding:12px 16px;margin:16px 0}
+.bx-c{background:rgba(36,99,166,.11);border-left-color:#2463a6}.bx-k{background:rgba(30,122,61,.13);border-left-color:#1b7a3d}.bx-n{background:rgba(232,184,74,.2);border-left-color:#e8b84a}
+.tw{overflow-x:auto;margin:14px 0;border:1px solid var(--bd);border-radius:12px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.55;min-width:460px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--bd)}tr:last-child td{border-bottom:0}
+th{background:var(--acb);color:var(--ac);font-size:.85rem;white-space:nowrap}tr:nth-child(even) td{background:rgba(127,127,127,.06)}
+.f{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.95rem;background:var(--acb);border:1px dashed var(--ac);padding:10px 14px;border-radius:10px;margin:12px 0;overflow-x:auto;white-space:nowrap}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:4px 16px;margin:10px 0}details[open]{border-color:var(--ac)}
+summary{cursor:pointer;font-weight:700;color:var(--ac);padding:8px 0}details p{margin:.3em 0 .8em}
+.q{background:var(--bg);border:1px solid var(--bd);border-radius:14px;padding:16px 18px;margin:16px 0}.q>p:first-child{margin-top:0}
+.o,.ko{display:block;width:100%;text-align:left;background:var(--card);color:inherit;border:1.5px solid var(--bd);border-radius:11px;padding:11px 14px;margin:8px 0;cursor:pointer;line-height:1.5}
+.o:hover,.ko:hover{border-color:var(--ac)}.ko.sel{border-color:var(--ac);background:var(--acb);font-weight:600}
+.o.ok,.ko.ok{background:var(--okb);border-color:var(--ok);color:var(--ok);font-weight:600}.o.no,.ko.no{background:var(--nob);border-color:var(--no);color:var(--no)}
+.pb{background:var(--acb);border-radius:10px;padding:10px 14px;margin-top:12px;font-size:.95rem;line-height:1.6}.pb[hidden]{display:none}
+.score{text-align:center;background:var(--acb);border:1px solid var(--ac);border-radius:16px;padding:20px;margin:14px 0}.score big{display:block;font-size:3rem;font-weight:800;color:var(--ac);line-height:1.2}.warn{color:var(--no);font-weight:700}
+.btn{display:block;width:100%;max-width:46rem;padding:13px;border-radius:12px;border:1.5px solid var(--g);background:var(--g);color:#fff;font-weight:700;margin:20px 0 4px;cursor:pointer}
+.btn.done.on{background:var(--okb);color:var(--ok);border-color:var(--ok)}.score .btn{margin:14px auto 0;max-width:260px}
+.nav{display:flex;justify-content:space-between;gap:10px;position:sticky;bottom:0;background:var(--card);padding:12px 0 calc(12px + env(safe-area-inset-bottom,0px));margin-top:26px;border-top:1px solid var(--bd);z-index:5}
+.nav a{padding:10px 16px;border-radius:11px;border:1.5px solid var(--bd);text-decoration:none;font-weight:700;font-size:.92rem;color:var(--ac)}
+.nav a+a,.nav span+a{background:var(--g);border-color:var(--g);color:#fff}
+.sc{display:none}
+@media(max-width:820px){
+ body{font-size:16.5px}.wrap{display:block;margin:12px auto;padding:0 10px}.panel{padding:20px 16px 12px;border-radius:14px}
+ h1{font-size:1.5rem}#mb{display:grid}.pill{display:none}.top h1{font-size:15px}
+ .side{position:fixed;z-index:40;top:0;left:0;bottom:0;width:86%;max-width:330px;max-height:none;border-radius:0 16px 16px 0;padding-top:calc(12px + env(safe-area-inset-top,0px));transform:translateX(-105%);transition:transform .22s}
+ .sc{display:block;position:fixed;inset:0;z-index:30;background:#0008;opacity:0;pointer-events:none;transition:opacity .2s}
+ body.open .side{transform:none}body.open .sc{opacity:1;pointer-events:auto}
+ .hero{padding:18px}.nav a{padding:10px 12px;font-size:.88rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="ti"><button id="mb" aria-label="Buka daftar materi">☰</button><div class="logo">E</div><div><h1>Materi Ekonomi Dasar</h1><small>Belajar mandiri · materi, latihan, kuis</small></div><div class="sp"></div><span class="pill" id="prog"></span></div></header>
+<div class="wrap"><nav class="side" id="side" aria-label="Daftar materi"></nav><main class="panel" id="app"></main></div><div class="sc" id="sc"></div>
+<script>
+const curve=(pts,lb)=>{const x=q=>40+q*2.6,y=p=>170-p*24,e=pts[pts.length-1];return `<svg viewBox='0 0 330 200' style='width:100%;max-width:380px;display:block;margin:8px auto'><path d='M40 10V170H310' stroke='currentColor' fill='none' opacity='.5'/><polyline fill='none' stroke='var(--ac)' stroke-width='2.5' points='${pts.map(([q,p])=>x(q)+','+y(p)).join(' ')}'/>${pts.map(([q,p])=>`<circle cx='${x(q)}' cy='${y(p)}' r='3.5' fill='var(--ac)'/><text x='${x(q)+5}' y='${y(p)-6}' font-size='10' fill='currentColor'>${q}</text>`).join('')}<text x='310' y='188' font-size='11' fill='currentColor' text-anchor='end'>Jumlah (Q)</text><text x='44' y='14' font-size='11' fill='currentColor'>Harga (P)</text><text x='${x(e[0])-6}' y='${y(e[1])+16}' font-size='13' font-weight='700' fill='var(--ac)' text-anchor='end'>${lb}</text></svg>`};
+/* ====== DATA: tambah minggu baru dengan menambah objek di array W ====== */
+const W=[{
+id:1,title:"Minggu 1: Fondasi Ilmu Ekonomi",
+sub:"Pengertian ilmu ekonomi, kebutuhan dan keinginan, kelangkaan, pilihan, biaya peluang, dan skala prioritas.",
+tujuan:["Menjelaskan pengertian, tujuan, dan manfaat ilmu ekonomi.","Membedakan kebutuhan dan keinginan serta mengelompokkan kebutuhan berdasarkan jenisnya.","Menjelaskan penyebab dan dampak kelangkaan.","Memahami konsep pilihan, pengorbanan, dan biaya peluang (opportunity cost).","Menyusun skala prioritas berdasarkan kebutuhan, anggaran, dan tingkat kepentingan."],
+pert:[
+{t:"Pengertian dan Konsep Dasar Ilmu Ekonomi",target:"Memahami alasan manusia mempelajari ekonomi",
+materi:`<h2>1. Pengertian ilmu ekonomi</h2>
+<p>Ilmu ekonomi adalah ilmu yang mempelajari bagaimana manusia menggunakan sumber daya yang terbatas untuk memenuhi kebutuhan yang beragam.</p>
+<p>Sumber daya tersebut antara lain uang, waktu, tenaga kerja, tanah, bahan baku, dan modal.</p>
+<p>Mengapa manusia membutuhkan ilmu ekonomi? Karena manusia memiliki banyak kebutuhan, sedangkan sumber daya untuk memenuhinya terbatas. Oleh karena itu, manusia harus menentukan pilihan.</p>
+<div class="box"><b>Contoh:</b> Seorang siswa memiliki uang saku Rp20.000. Ia ingin membeli makan, minuman, alat tulis, dan bermain gim. Karena uangnya terbatas, ia perlu menentukan pengeluaran mana yang didahulukan. Keputusan ini adalah penerapan ilmu ekonomi.</div>
+<h2>2. Tujuan mempelajari ilmu ekonomi</h2>
+<ul><li>Memenuhi kebutuhan secara rasional.</li><li>Menggunakan uang dan sumber daya secara efisien.</li><li>Menentukan pilihan terbaik dari beberapa alternatif.</li><li>Mengurangi pemborosan.</li><li>Memahami kegiatan produksi, distribusi, dan konsumsi.</li><li>Mengambil keputusan dengan mempertimbangkan manfaat dan pengorbanan.</li></ul>
+<h2>3. Kegiatan utama ekonomi</h2>
+<ul><li><b>Produksi:</b> menghasilkan barang atau jasa, atau menambah nilai guna barang. Contoh: pengusaha membuat roti untuk dijual.</li><li><b>Distribusi:</b> menyalurkan barang atau jasa dari produsen kepada konsumen. Contoh: pedagang memasok roti dari pabrik ke toko.</li><li><b>Konsumsi:</b> menggunakan barang atau jasa untuk memenuhi kebutuhan. Contoh: siswa membeli dan memakan roti saat istirahat.</li></ul>
+<h2>4. Konsep dasar ilmu ekonomi</h2>
+<ul><li><b>Kebutuhan manusia beragam:</b> makanan, pakaian, tempat tinggal, pendidikan, kesehatan, dll.</li><li><b>Sumber daya terbatas:</b> uang, waktu, bahan baku, dan tenaga tidak tersedia tanpa batas.</li><li><b>Manusia harus memilih:</b> bila semua kebutuhan tidak dapat dipenuhi sekaligus, manusia perlu menentukan prioritas.</li></ul>
+<p>Ketiga konsep ini menjadi dasar untuk seluruh materi ekonomi selanjutnya.</p>
+<h2>5. Contoh kasus</h2>
+<p>Rina mempunyai uang Rp50.000. Ia ingin membeli buku latihan Rp25.000, makan Rp15.000, dan aksesori Rp20.000. Total keinginannya Rp60.000, sedangkan uangnya hanya Rp50.000.</p>
+<p>Jika buku dan makan lebih penting saat itu, ia dapat membeli keduanya seharga Rp40.000 dan menunda aksesori.</p>
+<div class="box"><b>Kesimpulan:</b> ilmu ekonomi membantu Rina mengatur sumber daya terbatas untuk memenuhi kebutuhan yang dianggap paling penting.</div>`,
+eval:`<h2>Latihan</h2><div class="q"><p>Pada contoh kasus Rina, berapa kekurangan uangnya jika ia membeli semua yang diinginkan? Apa yang sebaiknya ia lakukan?</p><details><summary>Lihat jawaban</summary><p>Rp60.000 − Rp50.000 = Rp10.000. Rina perlu menentukan prioritas: membeli buku dan makan (Rp40.000) dan menunda aksesori.</p></details></div>
+<p class="mu">Kerjakan juga Evaluasi Minggu Pertama di halaman minggu.</p>`},
+{t:"Kebutuhan dan Keinginan",target:"Mampu membedakan dan mengelompokkan kebutuhan",
+materi:`<h2>1. Pengertian kebutuhan</h2>
+<p>Kebutuhan adalah segala sesuatu yang diperlukan manusia untuk mempertahankan kehidupan, menjalankan aktivitas, dan mencapai kesejahteraan. Contoh: makanan, pakaian, tempat tinggal, pendidikan, kesehatan, transportasi.</p>
+<p>Kebutuhan setiap orang tidak selalu sama. Siswa membutuhkan buku untuk belajar, pengusaha mungkin membutuhkan mesin untuk usahanya.</p>
+<h2>2. Perbedaan kebutuhan dan keinginan</h2>
+<div class="tw"><table><tr><th>Aspek</th><th>Kebutuhan</th><th>Keinginan</th></tr>
+<tr><td>Pengertian</td><td>Sesuatu yang diperlukan</td><td>Sesuatu yang ingin dimiliki atau dinikmati</td></tr>
+<tr><td>Prioritas</td><td>Biasanya lebih penting dipenuhi</td><td>Dapat ditunda</td></tr>
+<tr><td>Contoh</td><td>Makan ketika lapar</td><td>Membeli makanan mahal padahal ada yang lebih murah</td></tr>
+<tr><td>Jika tidak dipenuhi</td><td>Dapat mengganggu kehidupan atau aktivitas</td><td>Umumnya tidak langsung mengganggu kebutuhan dasar</td></tr></table></div>
+<p>Contoh: siswa membutuhkan sepatu untuk sekolah. Namun memilih sepatu bermerek mahal padahal sepatu layak masih tersedia adalah keinginan yang lebih spesifik.</p>
+<div class="box"><b>Catatan:</b> kebutuhan dan keinginan bergantung pada situasi. Ponsel bisa menjadi kebutuhan untuk pembelajaran daring atau pekerjaan, sedangkan keinginan memiliki model terbaru belum tentu mendesak.</div>
+<h2>3. Jenis kebutuhan berdasarkan intensitas</h2>
+<ul><li><b>Primer:</b> kebutuhan pokok untuk kelangsungan hidup. Contoh: makanan, pakaian layak, tempat tinggal.</li><li><b>Sekunder:</b> pelengkap yang menambah kenyamanan setelah primer terpenuhi. Contoh: meja belajar, kipas angin.</li><li><b>Tersier:</b> berkaitan dengan kemewahan atau prestise. Contoh: mobil mewah, jam tangan mewah.</li></ul>
+<p class="mu">Pengelompokan ini tidak mutlak; barang sekunder bagi satu orang bisa menjadi kebutuhan penting bagi orang lain karena pekerjaan atau kondisi khususnya.</p>
+<h2>4. Berdasarkan sifat, waktu, dan subjek</h2>
+<ul><li><b>Jasmani:</b> kondisi fisik (makanan, olahraga, istirahat). <b>Rohani:</b> ketenangan batin dan spiritual (rekreasi, hiburan, kegiatan keagamaan).</li><li><b>Sekarang:</b> harus segera dipenuhi (obat ketika sakit). <b>Masa depan:</b> dapat direncanakan (menabung biaya pendidikan).</li><li><b>Individu:</b> kebutuhan pribadi (seragam sekolah). <b>Kolektif:</b> kebutuhan bersama (jalan umum, penerangan jalan, fasilitas sekolah).</li></ul>
+<h2>5. Faktor yang memengaruhi kebutuhan</h2>
+<ul><li>Usia dan tahap kehidupan</li><li>Pendapatan atau kemampuan ekonomi</li><li>Lingkungan tempat tinggal</li><li>Pendidikan dan pekerjaan</li><li>Perkembangan teknologi</li><li>Budaya dan kebiasaan</li><li>Kondisi kesehatan</li></ul>
+<p>Contoh: daerah dingin membutuhkan pakaian tebal, daerah panas lebih membutuhkan pakaian yang nyaman dan menyerap keringat.</p>`,
+eval:`<h2>Latihan penerapan</h2>
+<p>Andi mempunyai uang Rp100.000. Ia ingin membeli makan Rp25.000, buku pelajaran Rp35.000, kaus baru Rp50.000, dan pulsa internet Rp30.000 untuk mengerjakan tugas. Jumlah seluruhnya Rp140.000.</p>
+<div class="q"><p>1. Berapa kekurangan uang Andi jika membeli semuanya?</p><details><summary>Jawaban</summary><p>Rp140.000 − Rp100.000 = Rp40.000.</p></details></div>
+<div class="q"><p>2. Kebutuhan mana yang sebaiknya diprioritaskan?</p><details><summary>Jawaban</summary><p>Makanan, buku pelajaran, dan internet untuk tugas, sesuai urgensi dan kondisi Andi. Totalnya Rp90.000.</p></details></div>
+<div class="q"><p>3. Apakah kaus baru selalu merupakan keinginan? Jelaskan.</p><details><summary>Jawaban</summary><p>Tidak selalu. Jika kaus diperlukan sebagai pengganti pakaian yang sudah tidak layak, kaus dapat menjadi kebutuhan.</p></details></div>`},
+{t:"Kelangkaan",target:"Memahami keterbatasan sumber daya",
+materi:`<h2>1. Pengertian kelangkaan</h2>
+<p>Kelangkaan adalah keadaan ketika sumber daya yang tersedia tidak cukup untuk memenuhi seluruh kebutuhan dan keinginan manusia.</p>
+<p>Kelangkaan tidak selalu berarti barang benar-benar habis. Barang dapat tersedia, tetapi jumlahnya tidak mencukupi pada waktu dan tempat tertentu. Contoh: air bersih berkurang saat musim kemarau sehingga masyarakat harus menghemat.</p>
+<h2>2. Penyebab kelangkaan</h2>
+<ul><li><b>Keterbatasan sumber daya alam:</b> minyak bumi, gas alam, dan mineral memiliki cadangan terbatas.</li><li><b>Pertumbuhan penduduk:</b> makin banyak penduduk, makin besar kebutuhan pangan, tempat tinggal, pendidikan, dan kesehatan.</li><li><b>Perbedaan letak geografis:</b> sumber daya tidak tersebar merata.</li><li><b>Keterbatasan kemampuan produksi:</b> mesin, tenaga kerja, teknologi, modal, dan bahan baku membatasi jumlah barang.</li><li><b>Bencana alam dan perubahan lingkungan:</b> banjir, kekeringan, atau gagal panen.</li><li><b>Distribusi tidak merata:</b> barang sulit diperoleh karena hambatan transportasi.</li></ul>
+<h2>3. Macam-macam sumber daya ekonomi</h2>
+<div class="tw"><table><tr><th>Sumber daya</th><th>Penjelasan</th><th>Contoh</th></tr>
+<tr><td>Alam</td><td>Berasal dari alam</td><td>Tanah, air, kayu, mineral</td></tr>
+<tr><td>Manusia</td><td>Tenaga dan kemampuan manusia</td><td>Guru, petani, akuntan</td></tr>
+<tr><td>Modal</td><td>Barang yang membantu produksi</td><td>Mesin, peralatan, bangunan usaha</td></tr>
+<tr><td>Kewirausahaan</td><td>Kemampuan mengorganisasi sumber daya dan mengambil keputusan usaha</td><td>Pengusaha yang mengelola modal, tenaga kerja, produksi</td></tr></table></div>
+<p class="mu">Uang digunakan untuk membiayai produksi, sedangkan modal dalam pengertian ekonomi mencakup barang dan aset produktif untuk menghasilkan barang atau jasa.</p>
+<h2>4. Dampak kelangkaan</h2>
+<ul><li>Menentukan prioritas dan menghemat sumber daya.</li><li>Mencari barang pengganti.</li><li>Menggunakan teknologi yang lebih efisien.</li><li>Mempertimbangkan biaya dan manfaat.</li><li>Mengatur distribusi agar tepat guna.</li></ul>
+<p>Kelangkaan juga dapat memengaruhi harga, tetapi harga tidak selalu naik hanya karena barang langka; kebijakan pemerintah, biaya produksi, permintaan, dan faktor pasar lain turut berpengaruh.</p>
+<h2>5. Cara mengatasi kelangkaan</h2>
+<ul><li>Menggunakan sumber daya secara hemat.</li><li>Meningkatkan produktivitas dan mengembangkan teknologi.</li><li>Mendaur ulang bahan yang masih dapat digunakan.</li><li>Mengembangkan sumber daya alternatif.</li><li>Memperbaiki distribusi.</li><li>Menyusun perencanaan produksi dan konsumsi.</li></ul>
+<p>Contoh: sekolah kekurangan air. Solusinya: memperbaiki kebocoran, menampung air hujan dengan aman, dan menggunakan air sesuai kebutuhan.</p>`,
+eval:`<h2>Studi kasus</h2>
+<p>Sebuah usaha keripik membutuhkan 100 kg singkong per minggu. Karena gagal panen, pemasok hanya dapat menyediakan 60 kg.</p>
+<div class="q"><p>1. Berapa kilogram kekurangan bahan bakunya?</p><details><summary>Jawaban</summary><p>100 − 60 = 40 kg.</p></details></div>
+<div class="q"><p>2. Apa penyebab kelangkaan tersebut?</p><details><summary>Jawaban</summary><p>Penurunan hasil panen.</p></details></div>
+<div class="q"><p>3. Sebutkan tiga solusi yang dapat dilakukan pengusaha.</p><details><summary>Jawaban</summary><p>Mencari pemasok lain, menyesuaikan jumlah produksi, atau mencari bahan baku alternatif yang sesuai dengan produknya.</p></details></div>`},
+{t:"Pilihan dan Biaya Peluang",target:"Menentukan konsekuensi dari suatu pilihan",
+materi:`<h2>1. Mengapa manusia harus memilih?</h2>
+<p>Karena sumber daya terbatas, sedangkan kebutuhan dan keinginan beragam. Pilihan ekonomi adalah keputusan menggunakan sumber daya pada satu alternatif dibandingkan alternatif lainnya.</p>
+<p>Contoh: siswa memiliki waktu luang dua jam. Ia dapat belajar, bekerja paruh waktu, berolahraga, atau bermain. Jika memilih belajar, ia tidak dapat menggunakan dua jam yang sama untuk kegiatan lain.</p>
+<h2>2. Pengertian biaya peluang</h2>
+<div class="box"><b>Biaya peluang (opportunity cost)</b> adalah nilai dari alternatif terbaik yang dikorbankan ketika seseorang memilih suatu alternatif.</div>
+<p>Biaya peluang bukan jumlah seluruh pilihan yang ditinggalkan, melainkan alternatif terbaik berikutnya yang tidak jadi dipilih.</p>
+<h2>3. Contoh biaya peluang</h2>
+<h3>Menggunakan uang</h3><p>Siti punya Rp50.000: membeli buku latihan Rp50.000 atau menonton film. Jika memilih buku, biaya peluangnya adalah manfaat terbaik dari menonton film, bukan otomatis Rp50.000.</p>
+<h3>Menggunakan waktu</h3><p>Budi punya dua jam: mengikuti kursus atau bekerja dengan upah Rp30.000 per jam. Jika memilih kursus, pendapatan Rp60.000 yang tidak jadi diperoleh dapat menjadi biaya peluang (dengan asumsi ia benar-benar punya kesempatan bekerja dua jam).</p>
+<h3>Memilih usaha</h3><p>Pemilik modal dapat membuka usaha minuman (untung Rp500.000/bulan) atau makanan (Rp700.000/bulan). Jika memilih minuman, keuntungan Rp700.000 dari usaha makanan adalah biaya peluangnya, dengan asumsi kedua alternatif saling eksklusif dan angkanya sebanding.</p>
+<h2>4. Cara menentukan biaya peluang</h2>
+<ul><li>Identifikasi pilihan yang tersedia.</li><li>Tentukan pilihan yang diambil.</li><li>Cari alternatif terbaik yang tidak jadi dipilih.</li><li>Tentukan nilai atau manfaat alternatif tersebut.</li></ul>
+<p><b>Biaya peluang = nilai alternatif terbaik yang dikorbankan.</b> Biaya peluang tidak selalu berbentuk uang; waktu, manfaat, pengalaman, dan kepuasan juga dapat dipertimbangkan.</p>
+<h2>5. Biaya nyata vs biaya peluang</h2>
+<div class="tw"><table><tr><th>Biaya nyata</th><th>Biaya peluang</th></tr><tr><td>Pengeluaran yang benar-benar dibayarkan</td><td>Nilai alternatif terbaik yang dilepaskan</td></tr><tr><td>Contoh: biaya membeli bahan Rp100.000</td><td>Contoh: keuntungan dari pekerjaan yang tidak diambil</td></tr><tr><td>Dapat dicatat sebagai pengeluaran uang</td><td>Tidak selalu berupa pembayaran uang</td></tr></table></div>
+<p>Keduanya dapat dipertimbangkan bersama saat mengevaluasi keputusan ekonomi.</p>`,
+eval:`<h2>Latihan menghitung biaya peluang</h2>
+<p>Dina memiliki waktu empat jam pada hari Minggu dengan tiga pilihan:</p>
+<ul><li>Pelatihan akuntansi, nilai manfaat Rp100.000.</li><li>Bekerja paruh waktu, pendapatan Rp80.000.</li><li>Menonton film, nilai manfaat pribadi Rp40.000.</li></ul>
+<div class="q"><p>Jika Dina memilih pelatihan akuntansi, apa biaya peluangnya?</p><details><summary>Jawaban</summary><p>Alternatif terbaik berikutnya yang dikorbankan, yaitu bekerja paruh waktu dengan pendapatan Rp80.000 (jika angka tersebut dipakai sebagai ukuran manfaat yang sebanding).</p><p class="mu">Nilai manfaat pribadi tidak selalu dapat diukur akurat dengan uang; contoh ini disederhanakan agar konsep lebih mudah dipahami.</p></details></div>`},
+{t:"Skala Prioritas Kebutuhan",target:"Menyusun urutan kebutuhan secara rasional",
+materi:`<h2>1. Pengertian skala prioritas</h2>
+<p>Skala prioritas adalah urutan kebutuhan berdasarkan tingkat kepentingan, urgensi, kemampuan keuangan, dan manfaatnya. Ini membantu menentukan kebutuhan yang dipenuhi terlebih dahulu ketika uang, waktu, atau sumber daya tidak cukup.</p>
+<p>Contoh: siswa menerima uang saku Rp300.000 seminggu untuk transportasi, makan, alat tulis, tabungan, dan hiburan. Tanpa perencanaan, uang bisa habis untuk hal yang kurang penting sebelum kebutuhan utama terpenuhi.</p>
+<h2>2. Tujuan menyusun skala prioritas</h2>
+<ul><li>Memastikan kebutuhan penting terpenuhi.</li><li>Menghindari pemborosan dan mengendalikan keinginan membeli.</li><li>Menyesuaikan pengeluaran dengan pendapatan.</li><li>Membantu mencapai tujuan keuangan.</li><li>Mengurangi risiko kehabisan uang sebelum waktunya.</li></ul>
+<h2>3. Faktor yang dipertimbangkan</h2>
+<ul><li><b>Urgensi:</b> seberapa cepat kebutuhan harus dipenuhi.</li><li><b>Manfaat:</b> seberapa besar manfaatnya.</li><li><b>Kemampuan keuangan:</b> apakah uangnya cukup.</li><li><b>Konsekuensi jika ditunda:</b> apakah menimbulkan masalah.</li><li><b>Tujuan jangka panjang:</b> apakah membantu tujuan masa depan.</li></ul>
+<p class="mu">Tidak semua kebutuhan primer harus didahulukan secara mekanis. Misalnya obat yang mendesak bisa lebih prioritas daripada pengeluaran rutin yang masih bisa ditunda.</p>
+<h2>4. Langkah menyusun skala prioritas</h2>
+<ul><li><b>Langkah 1:</b> Catat semua kebutuhan (makan, transportasi, buku, paket internet, pakaian, hiburan).</li><li><b>Langkah 2:</b> Bedakan kebutuhan dan keinginan.</li><li><b>Langkah 3:</b> Urutkan berdasarkan urgensi.</li><li><b>Langkah 4:</b> Sesuaikan dengan anggaran.</li><li><b>Langkah 5:</b> Evaluasi pengeluaran.</li></ul>
+<h2>5. Contoh skala prioritas siswa SMK (Rp300.000/minggu)</h2>
+<div class="tw"><table><tr><th>Kebutuhan</th><th>Anggaran</th><th>Prioritas</th></tr>
+<tr><td>Transportasi sekolah</td><td>Rp75.000</td><td>Tinggi</td></tr><tr><td>Makan</td><td>Rp100.000</td><td>Tinggi</td></tr><tr><td>Paket internet untuk tugas</td><td>Rp35.000</td><td>Tinggi</td></tr><tr><td>Alat tulis</td><td>Rp20.000</td><td>Sedang–tinggi</td></tr><tr><td>Tabungan</td><td>Rp40.000</td><td>Sesuai tujuan keuangan</td></tr><tr><td>Hiburan</td><td>Rp30.000</td><td>Dapat disesuaikan</td></tr><tr><th>Total</th><th>Rp300.000</th><th></th></tr></table></div>
+<p class="mu">Urutan prioritas sebenarnya perlu disesuaikan dengan kondisi siswa, seperti jarak rumah ke sekolah, ketersediaan makanan, dan kebutuhan tugas.</p>`,
+eval:`<h2>Studi kasus</h2>
+<p>Andi menerima uang Rp200.000 dengan kebutuhan: transportasi Rp50.000, makan Rp70.000, buku pelajaran Rp40.000, aksesori Rp60.000, dan menonton film Rp40.000.</p>
+<div class="q"><p>1. Berapa total kebutuhan dan keinginannya, dan berapa kekurangannya?</p><details><summary>Jawaban</summary><p>Total Rp260.000, kekurangan Rp60.000.</p></details></div>
+<div class="q"><p>2. Susun prioritas Andi dan hitung sisa uangnya.</p><details><summary>Jawaban</summary><p>Dahulukan transportasi, makan, dan buku: total Rp160.000. Sisa Rp40.000 dapat disimpan atau dipakai untuk kebutuhan lain yang lebih mendesak.</p></details></div>
+<div class="box"><b>Kesimpulan:</b> skala prioritas bukan berarti tidak boleh menikmati hiburan, melainkan memastikan kebutuhan penting terpenuhi sebelum uang dialokasikan untuk hal yang dapat ditunda.</div>`}
+],
+rangkuman:`<div class="tw"><table><tr><th>Konsep</th><th>Inti pemahaman</th></tr>
+<tr><td>Ilmu ekonomi</td><td>Cara menggunakan sumber daya terbatas untuk memenuhi kebutuhan</td></tr>
+<tr><td>Kebutuhan</td><td>Sesuatu yang diperlukan untuk kehidupan dan aktivitas</td></tr>
+<tr><td>Keinginan</td><td>Sesuatu yang ingin dimiliki atau dinikmati</td></tr>
+<tr><td>Kelangkaan</td><td>Sumber daya tidak mencukupi seluruh kebutuhan dan keinginan</td></tr>
+<tr><td>Pilihan ekonomi</td><td>Memilih satu alternatif dibandingkan alternatif lain</td></tr>
+<tr><td>Biaya peluang</td><td>Nilai alternatif terbaik yang dikorbankan</td></tr>
+<tr><td>Skala prioritas</td><td>Urutan kebutuhan berdasarkan kepentingan dan kondisi</td></tr></table></div>
+<div class="box">Kebutuhan beragam → sumber daya terbatas → terjadi kelangkaan → manusia harus memilih → ada biaya peluang → diperlukan skala prioritas.</div>`,
+quiz:[
+{q:"Ilmu ekonomi mempelajari cara manusia ....",o:["memenuhi semua keinginan tanpa batas","menggunakan sumber daya terbatas untuk memenuhi kebutuhan","meningkatkan harga semua barang","menghindari seluruh pengeluaran","menghasilkan uang sebanyak-banyaknya tanpa mempertimbangkan biaya"],a:1},
+{q:"Berikut yang merupakan contoh kebutuhan berdasarkan situasi adalah ....",o:["membeli semua barang yang sedang tren","membeli aksesori meskipun uang tidak cukup","membeli obat yang diperlukan ketika sakit","mengganti ponsel setiap bulan","membeli barang hanya karena iklan"],a:2},
+{q:"Penyebab utama kelangkaan dalam ilmu ekonomi adalah ....",o:["semua barang memiliki harga mahal","manusia tidak memiliki keinginan","kebutuhan selalu berkurang","sumber daya terbatas dibandingkan kebutuhan","seluruh barang tidak dapat diproduksi"],a:3},
+{q:"Riko memilih bekerja dengan pendapatan Rp100.000 daripada kegiatan lain yang manfaat terbaiknya senilai Rp75.000. Biaya peluang yang dilepaskan Riko adalah ....",o:["Rp25.000","Rp75.000","Rp100.000","Rp175.000","Rp0"],a:1},
+{q:"Tindakan yang paling tepat ketika uang terbatas adalah ....",o:["membeli barang yang paling menarik","mengikuti semua keinginan teman","menggunakan seluruh uang untuk hiburan","mendahulukan kebutuhan berdasarkan prioritas","berbelanja tanpa membuat perencanaan"],a:3}],
+uraian:[
+{q:"Jelaskan pengertian ilmu ekonomi menggunakan bahasamu sendiri.",a:"Ilmu ekonomi mempelajari cara manusia menentukan pilihan dalam menggunakan sumber daya yang terbatas untuk memenuhi kebutuhan."},
+{q:"Jelaskan perbedaan kebutuhan dan keinginan serta berikan masing-masing dua contoh.",a:"Kebutuhan adalah sesuatu yang diperlukan; keinginan adalah sesuatu yang ingin dimiliki atau dinikmati. Contoh kebutuhan: makanan dan buku wajib. Contoh keinginan: aksesori tambahan dan hiburan yang dapat ditunda."},
+{q:"Sebutkan empat penyebab kelangkaan dan jelaskan salah satunya.",a:"Contoh penyebab: sumber daya alam terbatas, pertumbuhan penduduk, distribusi tidak merata, keterbatasan produksi, dan bencana alam."},
+{q:"Seseorang memiliki uang Rp100.000. Ia dapat membeli buku Rp60.000 atau sepatu olahraga Rp100.000. Jika memilih buku, jelaskan biaya peluangnya dengan asumsi sepatu merupakan alternatif terbaik berikutnya.",a:"Biaya peluangnya adalah manfaat terbaik yang dilepaskan dari pilihan sepatu olahraga, bukan otomatis harga Rp100.000. Harga hanya menjadi ukuran uang; secara konsep biaya peluang adalah nilai alternatif yang dikorbankan."},
+{q:"Seorang siswa memiliki uang Rp150.000 dengan kebutuhan transportasi Rp40.000, makan Rp50.000, buku Rp35.000, dan hiburan Rp45.000. Susun prioritasnya dan jelaskan pengeluaran yang dapat ditunda.",a:"Prioritas awal: transportasi, makan, dan buku dengan total Rp125.000. Sisa uang Rp25.000. Hiburan Rp45.000 perlu ditunda atau disesuaikan karena anggaran tidak mencukupi."}],
+tugas:`<h3>Analisis Keputusan Ekonomi dalam Kehidupan Sehari-hari</h3>
+<p>Pilih satu situasi nyata yang pernah kamu alami, misalnya mengatur uang saku, membeli perlengkapan sekolah, atau menentukan penggunaan waktu belajar. Tuliskan:</p>
+<ul><li>Masalah ekonomi yang dihadapi.</li><li>Sumber daya yang tersedia.</li><li>Kebutuhan dan keinginan yang muncul.</li><li>Pilihan yang tersedia.</li><li>Biaya peluang dari pilihan yang diambil.</li><li>Skala prioritas yang digunakan.</li><li>Kesimpulan mengenai keputusan yang paling rasional.</li></ul>
+<p>Targetnya bukan hanya menghafal definisi, tetapi mampu menjelaskan alasan di balik suatu keputusan ekonomi.</p>`
+},{
+id:2,start:6,title:"Minggu 2: Perilaku Konsumen dan Produsen",
+sub:"Peran konsumen dan produsen, utilitas, faktor dan biaya produksi, serta penerimaan, laba, dan kerugian.",
+tujuan:["Menjelaskan pengertian dan peran konsumen serta produsen.","Menganalisis faktor yang memengaruhi perilaku konsumen.","Memahami konsep manfaat dan kepuasan konsumen.","Menjelaskan faktor produksi dan biaya produksi.","Menghitung penerimaan, laba, dan kerugian usaha sederhana."],
+pert:[
+{t:"Pengertian dan Peran Konsumen",target:"Memahami kegiatan konsumsi",
+materi:`<h2>1. Pengertian konsumen</h2>
+<p>Konsumen adalah orang atau pihak yang menggunakan barang atau jasa untuk memenuhi kebutuhan. Konsumen tidak selalu orang yang membeli langsung: orang tua membeli buku, tetapi anak yang menggunakannya.</p>
+<ul><li>Siswa yang membeli makanan di kantin.</li><li>Keluarga yang menggunakan listrik di rumah.</li><li>Guru yang menggunakan jasa transportasi.</li><li>Perusahaan yang menggunakan jasa internet untuk operasional.</li></ul>
+<h2>2. Pengertian konsumsi</h2>
+<p>Konsumsi adalah kegiatan menggunakan atau menghabiskan manfaat barang dan jasa untuk memenuhi kebutuhan. Contoh: makan nasi untuk energi, memakai sepatu untuk bersekolah, menggunakan jasa ojek, memanfaatkan internet untuk belajar.</p>
+<p>Barang tahan lama (meja, lemari, sepeda) juga termasuk barang konsumsi meskipun manfaatnya dipakai berkali-kali.</p>
+<h2>3. Tujuan konsumsi</h2>
+<ul><li>Memenuhi kebutuhan hidup.</li><li>Memperoleh manfaat dari barang dan jasa.</li><li>Mendukung kegiatan sehari-hari.</li><li>Meningkatkan kenyamanan dan kesejahteraan.</li><li>Memenuhi kebutuhan jasmani maupun rohani.</li></ul>
+<h2>4. Faktor yang memengaruhi konsumsi</h2>
+<ul><li><b>Pendapatan:</b> memengaruhi kemampuan membeli. Siswa dengan uang saku Rp20.000 mungkin memilih makanan Rp10.000, sedangkan yang anggarannya lebih besar punya lebih banyak alternatif.</li><li><b>Harga barang:</b> jika harga telur naik, keluarga mungkin mengurangi pembelian atau memilih sumber protein lain.</li><li><b>Selera dan preferensi:</b> dua siswa dengan uang saku sama bisa memilih nasi goreng atau mi ayam.</li><li><b>Harga barang lain:</b> <i>substitusi</i> (dapat menggantikan, misalnya teh dan kopi) dan <i>komplementer</i> (digunakan bersama, misalnya printer dan tinta). Jika harga kopi naik, sebagian konsumen beralih ke teh. Jika harga printer turun, permintaan tinta yang kompatibel mungkin meningkat.</li><li><b>Jumlah anggota keluarga:</b> keluarga lebih besar umumnya butuh lebih banyak bahan makanan dan kebutuhan rumah tangga.</li><li><b>Lingkungan dan iklan:</b> teman, tren, promosi, dan iklan memengaruhi pilihan, tetapi tidak selalu membuat pembelian menjadi kebutuhan penting.</li></ul>
+<h2>5. Contoh analisis perilaku konsumen</h2>
+<p>Doni memiliki uang Rp25.000.</p>
+<div class="tw"><table><tr><th>Barang</th><th>Harga</th></tr><tr><td>Nasi ayam</td><td>Rp15.000</td></tr><tr><td>Air mineral</td><td>Rp4.000</td></tr><tr><td>Camilan</td><td>Rp8.000</td></tr><tr><td>Pulsa internet</td><td>Rp10.000</td></tr></table></div>
+<p>Jika Doni membutuhkan makan dan internet untuk tugas sekolah, ia harus menentukan kombinasi yang sesuai anggaran. Nasi ayam dan air mineral berjumlah Rp19.000; jika internet lebih mendesak, ia bisa memilih makanan yang lebih murah agar masih punya uang untuk internet.</p>
+<div class="box"><b>Inti pelajaran:</b> konsumen perlu mempertimbangkan kebutuhan, harga, pendapatan, dan manfaat sebelum membeli.</div>`,
+eval:`<h2>Latihan</h2><p>Gunakan kasus Doni (uang Rp25.000) pada materi.</p>
+<div class="q"><p>1. Berapa total jika Doni membeli nasi ayam dan pulsa internet? Apakah cukup?</p><details><summary>Jawaban</summary><p>Rp15.000 + Rp10.000 = Rp25.000. Tepat cukup, tanpa sisa.</p></details></div>
+<div class="q"><p>2. Jika harga kopi naik, mengapa sebagian konsumen beralih ke teh? Termasuk jenis barang apa teh dan kopi?</p><details><summary>Jawaban</summary><p>Teh dan kopi adalah barang substitusi: bila harga kopi naik, konsumen dapat beralih ke teh yang fungsinya menggantikan.</p></details></div>`},
+{t:"Perilaku Konsumen",target:"Menganalisis keputusan pembelian",
+materi:`<h2>1. Pengertian perilaku konsumen</h2>
+<p>Perilaku konsumen adalah cara seseorang atau kelompok menentukan pilihan, membeli, menggunakan, dan mengevaluasi barang atau jasa untuk memenuhi kebutuhan. Yang dibahas bukan hanya apa yang dibeli, tetapi juga mengapa dipilih, berapa jumlahnya, dan bagaimana anggaran digunakan.</p>
+<p>Contoh: dua siswa punya Rp30.000. Siswa A membeli makanan dan alat tulis, siswa B membeli minuman kekinian. Perbedaan ini dipengaruhi kebutuhan, selera, harga, dan prioritas.</p>
+<h2>2. Manfaat dan kepuasan</h2>
+<p>Konsumen umumnya berusaha memperoleh manfaat atau kepuasan. Manfaat bisa berbeda untuk barang yang sama: air mineral sangat bermanfaat bagi yang kehausan setelah berolahraga, tetapi manfaat tambahannya kecil bagi yang baru saja minum.</p>
+<ul><li><b>Utilitas (nilai guna):</b> manfaat atau kepuasan dari konsumsi barang atau jasa. Contoh: siswa terbantu belajar menghadapi ujian setelah membeli buku latihan.</li><li><b>Utilitas total (TU):</b> keseluruhan manfaat dari mengonsumsi sejumlah barang, misalnya kepuasan setelah memakan tiga potong roti.</li><li><b>Utilitas marginal (MU):</b> tambahan manfaat dari satu unit tambahan barang.</li></ul>
+<div class="f">MU = ΔTU / ΔQ</div>
+<p>ΔTU = perubahan utilitas total; ΔQ = perubahan jumlah barang yang dikonsumsi. Tabel berikut hanya ilustrasi, bukan ukuran kepuasan yang berlaku untuk semua orang.</p>
+<div class="tw"><table><tr><th>Jumlah roti</th><th>Utilitas total</th><th>Utilitas marginal</th></tr><tr><td>0</td><td>0</td><td>—</td></tr><tr><td>1</td><td>10</td><td>10</td></tr><tr><td>2</td><td>18</td><td>8</td></tr><tr><td>3</td><td>24</td><td>6</td></tr><tr><td>4</td><td>28</td><td>4</td></tr><tr><td>5</td><td>30</td><td>2</td></tr></table></div>
+<p>Tambahan kepuasan makin kecil ketika jumlah roti yang dikonsumsi bertambah.</p>
+<div class="box"><b>Hukum utilitas marginal yang semakin menurun:</b> dalam kondisi tertentu, makin banyak suatu barang dikonsumsi berturut-turut, tambahan kepuasan tiap unit berikutnya cenderung menurun. Gelas pertama air saat haus memberi kepuasan besar; gelas kelima jauh lebih kecil. Ini kecenderungan umum, bukan aturan mutlak.</div>
+<h2>3. Keterbatasan anggaran</h2>
+<p>Siswa beranggaran Rp20.000 ingin membeli nasi Rp12.000 dan jus Rp10.000. Total Rp22.000 melebihi anggaran, sehingga ia harus memilih alternatif, misalnya nasi dan air mineral yang lebih murah.</p>
+<h2>4. Langkah pengambilan keputusan konsumen</h2>
+<ul><li>Menyadari kebutuhan.</li><li>Mencari informasi barang atau jasa.</li><li>Membandingkan harga, kualitas, dan manfaat.</li><li>Memutuskan pembelian.</li><li>Mengevaluasi apakah barang memenuhi harapan.</li></ul>
+<p>Contoh: sebelum membeli kalkulator untuk akuntansi, siswa membandingkan harga, fungsi, kualitas, dan aturan penggunaan kalkulator di sekolah.</p>`,
+eval:`<h2>Studi kasus</h2><p>Mira memiliki uang Rp50.000 dengan pilihan: buku latihan Rp35.000, makanan favorit Rp25.000, aksesori Rp30.000. Mira butuh buku untuk ujian; makanan tetap dibutuhkan; aksesori dapat ditunda.</p>
+<div class="q"><p>1. Berapa total jika Mira membeli buku dan makanan? Cukupkah?</p><details><summary>Jawaban</summary><p>Rp35.000 + Rp25.000 = Rp60.000, melebihi uangnya. Ia harus menyesuaikan, misalnya membeli makanan yang lebih murah atau buku yang sesuai anggaran.</p></details></div>
+<div class="q"><p>2. Dari tabel roti, berapa utilitas marginal roti ke-4?</p><details><summary>Jawaban</summary><p>28 − 24 = 4.</p></details></div>
+<div class="q"><p>3. Apakah keputusan rasional berarti selalu memilih barang termurah?</p><details><summary>Jawaban</summary><p>Tidak. Rasional berarti memilih alternatif yang paling sesuai dengan tujuan dan kemampuan, dengan mempertimbangkan kebutuhan, manfaat, harga, dan anggaran.</p></details></div>`},
+{t:"Pengertian dan Perilaku Produsen",target:"Memahami kegiatan produksi",
+materi:`<h2>1. Pengertian produsen dan produksi</h2>
+<p>Produsen adalah individu atau organisasi yang menghasilkan barang atau menyediakan jasa. Contoh: petani (padi), pabrik (pakaian), pengusaha makanan ringan, bengkel, guru les.</p>
+<p>Produksi adalah kegiatan menghasilkan barang atau jasa maupun meningkatkan nilai gunanya: singkong menjadi keripik, kayu menjadi meja, kain menjadi seragam, motor diperbaiki agar dapat dipakai lagi. Mengolah, memperbaiki, dan menyediakan jasa juga menciptakan nilai ekonomi.</p>
+<h2>2. Tujuan produsen</h2>
+<ul><li>Memperoleh keuntungan.</li><li>Memenuhi kebutuhan konsumen.</li><li>Menjaga kelangsungan usaha.</li><li>Memperluas pasar.</li><li>Meningkatkan kualitas produk.</li><li>Menciptakan lapangan kerja.</li></ul>
+<p class="mu">Dalam model dasar, perusahaan diasumsikan memaksimalkan keuntungan. Dalam kenyataan, perusahaan juga mempertimbangkan pertumbuhan, reputasi, dan keberlanjutan.</p>
+<h2>3. Faktor-faktor produksi</h2>
+<div class="tw"><table><tr><th>Faktor</th><th>Pengertian</th><th>Contoh</th></tr><tr><td>Sumber daya alam</td><td>Bahan atau sumber daya dari alam</td><td>Tanah, air, singkong</td></tr><tr><td>Tenaga kerja</td><td>Kemampuan fisik dan pikiran manusia</td><td>Karyawan, koki, penjahit</td></tr><tr><td>Modal</td><td>Barang dan aset produktif yang membantu produksi</td><td>Mesin, oven, peralatan</td></tr><tr><td>Kewirausahaan</td><td>Kemampuan mengatur usaha dan mengambil risiko</td><td>Pemilik yang mengatur produksi dan pemasaran</td></tr></table></div>
+<p>Contoh usaha keripik singkong: singkong sebagai bahan baku; pekerja mengupas dan menggoreng; kompor, wajan, dan alat pengemas membantu produksi; pengusaha menentukan jumlah produksi, harga, dan strategi penjualan.</p>
+<h2>4. Produktivitas</h2>
+<p>Produktivitas menunjukkan seberapa banyak hasil dibandingkan sumber daya yang digunakan.</p>
+<div class="f">Produktivitas = Jumlah output / Jumlah input</div>
+<p>Contoh: pekerja menghasilkan 40 bungkus keripik dalam 4 jam → 40 ÷ 4 = 10 bungkus per jam. Dengan alat lebih baik menjadi 60 bungkus dalam 4 jam → 15 bungkus per jam.</p>
+<h2>5. Faktor yang memengaruhi keputusan produsen</h2>
+<ul><li>Harga jual produk dan harga bahan baku.</li><li>Upah tenaga kerja.</li><li>Kemampuan mesin dan tenaga kerja.</li><li>Teknologi produksi.</li><li>Permintaan konsumen dan persaingan.</li><li>Ketersediaan modal dan bahan baku.</li></ul>
+<p>Contoh: saat permintaan es teh naik di musim panas, penjual dapat menambah persediaan es, gelas, teh, dan gula, tetapi tetap bergantung pada modal dan ketersediaan bahan.</p>
+<h2>6. Hubungan produsen dengan konsumen</h2>
+<ul><li>Konsumen memberi sinyal melalui pembelian dan preferensinya.</li><li>Produsen menyesuaikan produk dengan kebutuhan pasar.</li><li>Harga dan kualitas memengaruhi keputusan konsumen.</li><li>Permintaan konsumen memengaruhi keputusan produksi.</li></ul>
+<p>Contoh: jika siswa lebih menyukai makanan sehat, pedagang kantin dapat menyediakan lebih banyak buah atau roti.</p>`,
+eval:`<h2>Latihan</h2>
+<div class="q"><p>1. Sebutkan empat faktor produksi pada usaha keripik singkong beserta contohnya.</p><details><summary>Jawaban</summary><p>Sumber daya alam: singkong. Tenaga kerja: pekerja yang mengupas dan menggoreng. Modal: kompor, wajan, alat pengemas. Kewirausahaan: pengusaha yang menentukan produksi, harga, dan penjualan.</p></details></div>
+<div class="q"><p>2. Pekerja menghasilkan 60 bungkus keripik dalam 4 jam. Berapa produktivitasnya?</p><details><summary>Jawaban</summary><p>60 ÷ 4 = 15 bungkus per jam.</p></details></div>`},
+{t:"Faktor dan Biaya Produksi",target:"Mengidentifikasi input dan menghitung biaya",
+materi:`<h2>1. Pengertian biaya produksi</h2>
+<p>Biaya produksi adalah seluruh biaya yang dikeluarkan untuk menghasilkan barang atau jasa. Produsen perlu tahu berapa uang yang dibutuhkan dan apakah harga jual dapat menutupnya. Contoh: membuat 50 bungkus keripik memerlukan singkong, minyak goreng, bumbu, kemasan, dan upah tenaga kerja.</p>
+<h2>2. Jenis biaya produksi</h2>
+<ul><li><b>Biaya tetap (FC):</b> total biayanya tidak berubah ketika produksi berubah, dalam rentang kapasitas dan periode tertentu. Contoh: sewa tempat usaha bulanan Rp500.000 tetap sama untuk 100 atau 200 bungkus.</li><li><b>Biaya variabel (VC):</b> total biayanya berubah mengikuti jumlah produksi. Contoh: bahan baku, kemasan, bumbu, minyak goreng.</li><li><b>Biaya total (TC):</b> biaya tetap ditambah biaya variabel.</li></ul>
+<div class="f">TC = TFC + TVC</div>
+<h2>3. Contoh perhitungan (100 gelas)</h2>
+<div class="tw"><table><tr><th>Komponen</th><th>Jumlah</th></tr><tr><td>Sewa tempat (dialokasikan)</td><td>Rp100.000</td></tr><tr><td>Bahan baku</td><td>Rp150.000</td></tr><tr><td>Gelas dan sedotan</td><td>Rp50.000</td></tr><tr><td>Tenaga kerja</td><td>Rp100.000</td></tr><tr><th>Total biaya</th><th>Rp400.000</th></tr></table></div>
+<p>Sewa adalah biaya tetap; bahan baku dan kemasan adalah biaya variabel. Tenaga kerja bisa tetap atau variabel tergantung sistem pengupahan; di sini diasumsikan variabel. Maka biaya tetap Rp100.000, biaya variabel Rp300.000, biaya total Rp400.000.</p>
+<h2>4. Biaya per unit</h2>
+<div class="f">Biaya per unit = TC / Q</div>
+<p>Rp400.000 ÷ 100 = Rp4.000 per gelas.</p>
+<h2>5. Perubahan jumlah produksi</h2>
+<p>Biaya tetap Rp100.000 dan biaya variabel Rp3.000 per bungkus:</p>
+<div class="tw"><table><tr><th>Produksi</th><th>Biaya tetap</th><th>Biaya variabel</th><th>Biaya total</th></tr><tr><td>20</td><td>Rp100.000</td><td>Rp60.000</td><td>Rp160.000</td></tr><tr><td>40</td><td>Rp100.000</td><td>Rp120.000</td><td>Rp220.000</td></tr><tr><td>60</td><td>Rp100.000</td><td>Rp180.000</td><td>Rp280.000</td></tr></table></div>
+<p>Biaya rata-rata: 20 bungkus Rp8.000; 40 bungkus Rp5.500; 60 bungkus ≈ Rp4.667. Rata-rata menurun karena biaya tetap tersebar ke lebih banyak produk. Dalam praktik biaya per unit tidak selalu terus turun karena kapasitas, pemborosan, dan biaya tambahan.</p>
+<h2>6. Pentingnya menghitung biaya</h2>
+<p>Tanpa perhitungan yang benar, produsen berisiko menetapkan harga terlalu rendah. Jika biaya rata-rata satu bungkus Rp4.000 dan dijual Rp3.500, usaha rugi Rp500 per bungkus.</p>
+<div class="box"><b>Kesimpulan:</b> sebelum menentukan harga jual, pahami biaya tetap, biaya variabel, biaya total, dan biaya per unit.</div>`,
+eval:`<h2>Latihan</h2>
+<div class="q"><p>1. Usaha minuman memproduksi 100 gelas dengan biaya sewa Rp100.000, bahan baku Rp150.000, gelas dan sedotan Rp50.000, tenaga kerja Rp100.000 (variabel). Hitung biaya tetap, biaya variabel, biaya total, dan biaya per gelas.</p><details><summary>Jawaban</summary><p>Biaya tetap Rp100.000; biaya variabel Rp300.000; biaya total Rp400.000; biaya per gelas Rp400.000 ÷ 100 = Rp4.000.</p></details></div>
+<div class="q"><p>2. Biaya rata-rata sebungkus keripik Rp4.000 dan dijual Rp3.500. Berapa kerugian per bungkus?</p><details><summary>Jawaban</summary><p>Rp4.000 − Rp3.500 = Rp500 per bungkus.</p></details></div>`},
+{t:"Penerimaan, Laba, dan Kerugian",target:"Menganalisis hasil usaha",
+materi:`<h2>1. Penerimaan</h2>
+<p>Penerimaan (revenue) adalah uang yang diperoleh produsen dari penjualan barang atau jasa.</p>
+<div class="f">TR = P × Q</div>
+<p>P = harga jual per unit; Q = jumlah unit terjual. Contoh: 40 gelas es teh × Rp3.000 = Rp120.000. Penerimaan dihitung dari jumlah yang <b>terjual</b>, bukan yang diproduksi.</p>
+<h2>2. Laba</h2>
+<p>Laba adalah selisih positif antara penerimaan dan biaya total.</p>
+<div class="f">Laba = TR − TC</div>
+<p>Contoh: Rp120.000 − Rp90.000 = Rp30.000.</p>
+<h2>3. Kerugian</h2>
+<p>Kerugian terjadi ketika biaya total lebih besar daripada penerimaan. Contoh: Rp80.000 − Rp100.000 = −Rp20.000 (rugi Rp20.000). Jika penerimaan sama dengan biaya total, usaha impas (break-even) dalam perhitungan sederhana.</p>
+<h2>4. Studi kasus usaha siswa SMK</h2>
+<p>Rani membuat dan menjual 50 bungkus makanan ringan (data ilustrasi):</p>
+<div class="tw"><table><tr><th>Keterangan</th><th>Nilai</th></tr><tr><td>Produk terjual</td><td>50 bungkus</td></tr><tr><td>Harga jual</td><td>Rp5.000</td></tr><tr><td>Bahan baku</td><td>Rp100.000</td></tr><tr><td>Kemasan</td><td>Rp25.000</td></tr><tr><td>Tenaga kerja</td><td>Rp50.000</td></tr><tr><td>Lain-lain</td><td>Rp25.000</td></tr><tr><th>Biaya total</th><th>Rp200.000</th></tr></table></div>
+<ul><li><b>Langkah 1, penerimaan:</b> 50 × Rp5.000 = Rp250.000.</li><li><b>Langkah 2, laba:</b> Rp250.000 − Rp200.000 = Rp50.000.</li><li><b>Langkah 3, laba per bungkus:</b> Rp50.000 ÷ 50 = Rp1.000.</li></ul>
+<p class="mu">Mengasumsikan semua 50 bungkus terjual dan semua biaya relevan sudah dicatat.</p>
+<h2>5. Penerimaan besar selalu berarti laba besar?</h2>
+<p>Tidak.</p>
+<div class="tw"><table><tr><th></th><th>Usaha A</th><th>Usaha B</th></tr><tr><td>Penerimaan</td><td>Rp1.000.000</td><td>Rp800.000</td></tr><tr><td>Biaya total</td><td>Rp900.000</td><td>Rp500.000</td></tr><tr><td>Laba</td><td>Rp100.000</td><td>Rp300.000</td></tr></table></div>
+<p>Usaha A penerimaannya lebih besar, tetapi laba Usaha B lebih tinggi karena biayanya lebih rendah. Produsen perlu mengendalikan biaya dan menjaga kualitas, bukan hanya mengejar penjualan.</p>`,
+eval:`<h2>Latihan perhitungan</h2><p>Sebuah usaha menjual 80 bungkus keripik seharga Rp4.000 per bungkus. Biaya total produksi Rp250.000.</p>
+<div class="q"><p>1. Hitung penerimaan total.</p><details><summary>Jawaban</summary><p>80 × Rp4.000 = Rp320.000.</p></details></div>
+<div class="q"><p>2. Hitung laba atau kerugian.</p><details><summary>Jawaban</summary><p>Rp320.000 − Rp250.000 = laba Rp70.000.</p></details></div>
+<div class="q"><p>3. Jika biaya total naik menjadi Rp300.000 dengan penerimaan tetap, berapa laba atau ruginya?</p><details><summary>Jawaban</summary><p>Rp320.000 − Rp300.000 = laba Rp20.000.</p></details></div>`}
+],
+rangkuman:`<div class="tw"><table><tr><th>Konsep</th><th>Inti pemahaman</th></tr>
+<tr><td>Konsumen</td><td>Pihak yang menggunakan barang atau jasa</td></tr><tr><td>Konsumsi</td><td>Kegiatan menggunakan manfaat barang atau jasa</td></tr><tr><td>Perilaku konsumen</td><td>Cara konsumen memilih dan menggunakan barang atau jasa</td></tr><tr><td>Utilitas</td><td>Manfaat atau kepuasan dari konsumsi</td></tr><tr><td>Produsen</td><td>Pihak yang menghasilkan barang atau menyediakan jasa</td></tr><tr><td>Produksi</td><td>Menghasilkan atau meningkatkan nilai guna barang dan jasa</td></tr><tr><td>Faktor produksi</td><td>Sumber daya alam, tenaga kerja, modal, kewirausahaan</td></tr><tr><td>Biaya tetap</td><td>Biaya total yang tidak berubah dalam rentang produksi tertentu</td></tr><tr><td>Biaya variabel</td><td>Biaya total yang berubah mengikuti produksi</td></tr><tr><td>Biaya total</td><td>Biaya tetap + biaya variabel</td></tr><tr><td>Penerimaan</td><td>Harga jual × jumlah terjual</td></tr><tr><td>Laba</td><td>Penerimaan lebih besar daripada biaya total</td></tr><tr><td>Kerugian</td><td>Biaya total lebih besar daripada penerimaan</td></tr></table></div>
+<div class="box">Konsumen memiliki kebutuhan → konsumen menentukan pilihan → produsen menyediakan barang atau jasa → produsen menanggung biaya → barang dijual → penerimaan dibandingkan dengan biaya untuk mengetahui laba atau kerugian.</div>`,
+quiz:[
+{q:"Pihak yang menggunakan barang dan jasa untuk memenuhi kebutuhan disebut ....",o:["distributor","produsen","konsumen","investor","pemasok"],a:2},
+{q:"Tambahan kepuasan yang diperoleh dari mengonsumsi satu unit tambahan barang disebut ....",o:["utilitas total","utilitas marginal","biaya tetap","biaya peluang","penerimaan total"],a:1},
+{q:"Berikut yang merupakan contoh faktor produksi modal adalah ....",o:["keterampilan koki","tanah pertanian","kemampuan mengelola usaha","mesin pembuat roti","tenaga kerja karyawan"],a:3},
+{q:"Sebuah usaha memiliki biaya tetap Rp100.000 dan biaya variabel Rp200.000. Biaya totalnya adalah ....",o:["Rp100.000","Rp200.000","Rp250.000","Rp300.000","Rp400.000"],a:3},
+{q:"Seorang pedagang menjual 100 gelas minuman seharga Rp4.000 per gelas. Penerimaan totalnya adalah ....",o:["Rp40.000","Rp100.000","Rp200.000","Rp300.000","Rp400.000"],a:4},
+{q:"Jika penerimaan Rp500.000 dan biaya total Rp350.000, usaha tersebut memperoleh ....",o:["kerugian Rp150.000","laba Rp150.000","laba Rp350.000","penerimaan Rp850.000","kerugian Rp350.000"],a:1}],
+uraian:[
+{q:"Jelaskan perbedaan konsumen dan produsen dengan contoh.",a:"Konsumen menggunakan barang atau jasa, sedangkan produsen menghasilkan barang atau menyediakan jasa."},
+{q:"Jelaskan perbedaan utilitas total dan utilitas marginal.",a:"Utilitas total adalah keseluruhan manfaat konsumsi, sedangkan utilitas marginal adalah tambahan manfaat dari satu unit tambahan."},
+{q:"Sebutkan empat faktor produksi dan berikan contohnya.",a:"Sumber daya alam (tanah), tenaga kerja (karyawan), modal (mesin), dan kewirausahaan (pengelola usaha)."},
+{q:"Sebuah usaha memiliki biaya tetap Rp150.000 dan biaya variabel Rp250.000. Hitung biaya totalnya.",a:"Biaya total = Rp150.000 + Rp250.000 = Rp400.000."},
+{q:"Sebuah usaha menjual 60 produk dengan harga Rp5.000 per produk. Biaya totalnya Rp240.000. Hitung penerimaan dan laba atau kerugiannya.",a:"Penerimaan = 60 × Rp5.000 = Rp300.000. Laba = Rp300.000 − Rp240.000 = Rp60.000."}],
+tugas:`<h3>Analisis Usaha Sederhana</h3>
+<p>Pilih satu usaha yang mudah diamati, misalnya penjual es teh, gorengan, keripik, atau makanan di kantin sekolah. Buat laporan singkat berisi:</p>
+<ul><li>Nama dan jenis usaha.</li><li>Produk yang dijual.</li><li>Target konsumen.</li><li>Faktor yang memengaruhi keputusan konsumen.</li><li>Bahan baku, tenaga kerja, dan peralatan yang digunakan.</li><li>Perkiraan biaya produksi.</li><li>Harga jual dan perkiraan jumlah penjualan.</li><li>Perhitungan penerimaan.</li><li>Perhitungan laba atau kerugian.</li><li>Saran untuk meningkatkan efisiensi usaha.</li></ul>
+<p>Gunakan data nyata jika tersedia. Jika menggunakan perkiraan, tuliskan bahwa angka tersebut adalah asumsi.</p>`
+},{
+id:3,start:11,title:'Minggu 3: Permintaan dan Penawaran',
+sub:'Permintaan, penawaran, hukum dan kurvanya, serta pergerakan dan pergeseran kurva.',
+tujuan:['Menjelaskan pengertian permintaan dan penawaran.','Memahami hukum permintaan dan hukum penawaran.','Mengidentifikasi faktor-faktor yang memengaruhi permintaan dan penawaran.','Membedakan pergerakan sepanjang kurva dengan pergeseran kurva.','Membuat dan membaca tabel serta kurva permintaan dan penawaran.'],
+pert:[
+{t:'Pengertian Permintaan',target:'Memahami hubungan harga dan jumlah yang diminta',
+materi:`<h2>1. Apa itu permintaan?</h2>
+<p>Permintaan adalah jumlah barang atau jasa yang ingin dan mampu dibeli konsumen pada berbagai tingkat harga dalam periode tertentu.</p>
+<ul><li><b>Keinginan membeli:</b> konsumen memang menginginkan barang tersebut.</li><li><b>Kemampuan membeli:</b> konsumen memiliki daya beli.</li></ul>
+<p>Keinginan saja belum tentu menjadi permintaan ekonomi. Orang yang ingin membeli motor Rp25 juta tetapi tidak punya kemampuan atau rencana pembiayaan belum tentu menghasilkan permintaan efektif pada harga tersebut.</p>
+<h2>2. Permintaan vs jumlah yang diminta</h2>
+<ul><li><b>Permintaan:</b> hubungan antara berbagai tingkat harga dan jumlah barang yang ingin dibeli, faktor lain dianggap tetap.</li><li><b>Jumlah yang diminta:</b> jumlah barang yang ingin dan mampu dibeli pada satu tingkat harga tertentu.</li></ul>
+<p>Contoh: saat es teh Rp3.000, siswa ingin membeli dua gelas; jika harga turun menjadi Rp2.000, ia mungkin membeli tiga gelas. Dua gelas pada Rp3.000 adalah jumlah yang diminta pada harga tersebut, sedangkan hubungan harga dan jumlah pada berbagai tingkat harga membentuk kurva permintaan.</p>
+<h2>3. Hukum permintaan</h2>
+<div class='box'>Dengan faktor lain tetap (<i>ceteris paribus</i>), ketika harga naik, jumlah yang diminta cenderung turun; ketika harga turun, jumlah yang diminta cenderung naik.</div>
+<p>Alasannya: harga lebih tinggi membuat barang relatif lebih mahal, anggaran konsumen terbatas, konsumen dapat mengurangi pembelian atau memilih barang pengganti, sedangkan harga lebih rendah mendorong pembelian lebih banyak. Ini kecenderungan umum, bukan aturan mutlak.</p>
+<h2>4. Contoh tabel permintaan es teh per hari</h2>
+<div class='tw'><table><tr><th>Harga per gelas</th><th>Jumlah diminta</th></tr><tr><td>Rp2.000</td><td>100 gelas</td></tr><tr><td>Rp3.000</td><td>80 gelas</td></tr><tr><td>Rp4.000</td><td>60 gelas</td></tr><tr><td>Rp5.000</td><td>40 gelas</td></tr><tr><td>Rp6.000</td><td>20 gelas</td></tr></table></div>
+<p>Ketika harga meningkat, jumlah yang diminta menurun, sesuai hukum permintaan dengan asumsi faktor lain tetap.</p>
+<h2>5. Faktor yang memengaruhi permintaan</h2>
+<ul><li><b>Pendapatan konsumen:</b> dapat meningkatkan atau menurunkan permintaan, tergantung jenis barang.</li><li><b>Selera dan tren:</b> produk yang sedang populer permintaannya naik.</li><li><b>Harga barang substitusi:</b> kenaikan harga barang pengganti dapat meningkatkan permintaan barang yang dipertimbangkan.</li><li><b>Harga barang komplementer:</b> kenaikan harga barang pelengkap dapat mengurangi permintaan barang yang digunakan bersamanya.</li><li><b>Jumlah penduduk atau konsumen:</b> makin banyak calon pembeli, permintaan pasar dapat naik.</li><li><b>Perkiraan harga masa depan:</b> perkiraan kenaikan harga dapat mendorong orang membeli lebih awal.</li><li><b>Musim dan lingkungan:</b> cuaca panas meningkatkan permintaan minuman dingin.</li></ul>
+<div class='box'><b>Penting:</b> perubahan harga barang itu sendiri menyebabkan <i>pergerakan sepanjang</i> kurva permintaan. Perubahan faktor lain dapat <i>menggeser</i> kurva permintaan.</div>`,
+eval:`<h2>Latihan</h2>
+<div class='q'><p>1. Berdasarkan tabel es teh, berapa jumlah yang diminta pada harga Rp4.000 dan Rp6.000?</p><details><summary>Jawaban</summary><p>60 gelas pada Rp4.000 dan 20 gelas pada Rp6.000.</p></details></div>
+<div class='q'><p>2. Jelaskan perbedaan permintaan dan jumlah yang diminta.</p><details><summary>Jawaban</summary><p>Permintaan adalah hubungan antara berbagai tingkat harga dan jumlah yang ingin dibeli; jumlah yang diminta adalah jumlah pada satu tingkat harga tertentu.</p></details></div>
+<div class='q'><p>3. Mengapa keinginan membeli motor Rp25 juta belum tentu menjadi permintaan efektif?</p><details><summary>Jawaban</summary><p>Karena permintaan memerlukan keinginan sekaligus kemampuan membeli. Tanpa kemampuan atau rencana pembiayaan, keinginan itu belum menjadi permintaan efektif.</p></details></div>`},
+{t:'Hukum dan Kurva Permintaan',target:'Membuat serta membaca kurva permintaan',
+materi:`<h2>1. Kurva permintaan</h2>
+<p>Kurva permintaan adalah grafik hubungan harga barang dan jumlah yang diminta, faktor lain dianggap tetap. Sumbu vertikal (Y) menunjukkan harga, sumbu horizontal (X) menunjukkan jumlah, dan kurva umumnya menurun dari kiri atas ke kanan bawah.</p>
+<h2>2. Cara membuat kurva permintaan</h2>
+<div class='tw'><table><tr><th>Harga (P)</th><th>Jumlah diminta (Qd)</th></tr><tr><td>Rp2.000</td><td>100</td></tr><tr><td>Rp3.000</td><td>80</td></tr><tr><td>Rp4.000</td><td>60</td></tr><tr><td>Rp5.000</td><td>40</td></tr><tr><td>Rp6.000</td><td>20</td></tr></table></div>
+${curve([[100,2],[80,3],[60,4],[40,5],[20,6]],'D')}
+<ul><li>Buat sumbu vertikal untuk harga dan sumbu horizontal untuk jumlah.</li><li>Tentukan titik dari pasangan jumlah dan harga (jumlah di sumbu X, harga di sumbu Y).</li><li>Hubungkan titik-titik dengan garis.</li><li>Beri label kurva D (Demand/Permintaan).</li></ul>
+<h2>3. Persamaan permintaan sederhana</h2>
+<div class='f'>Qd = a − bP</div>
+<p>Qd = jumlah diminta; P = harga; a = konstanta; b = koefisien positif yang menunjukkan besarnya perubahan jumlah terhadap harga.</p>
+<p>Contoh: Qd = 120 − 20P, dengan P dalam ribuan rupiah dan Qd dalam gelas.</p>
+<ul><li>Harga Rp2.000 (P = 2): Qd = 120 − 20(2) = 80 gelas.</li><li>Harga Rp3.000 (P = 3): Qd = 120 − 20(3) = 60 gelas.</li></ul>
+<h2>4. Pergerakan sepanjang kurva</h2>
+<p>Terjadi ketika harga barang itu sendiri berubah, faktor lain tetap. Harga turun → jumlah diminta lebih besar; harga naik → jumlah diminta lebih kecil.</p>
+<p>Contoh: harga es teh turun dari Rp4.000 ke Rp3.000, jumlah diminta naik dari 60 ke 80 gelas. Ini pergerakan sepanjang kurva, bukan pergeseran.</p>
+<h2>5. Pergeseran kurva permintaan</h2>
+<p>Terjadi ketika faktor selain harga barang itu sendiri berubah.</p>
+<ul><li><b>Ke kanan:</b> permintaan meningkat pada setiap tingkat harga. Contoh: jumlah siswa di sekolah bertambah.</li><li><b>Ke kiri:</b> permintaan menurun pada setiap tingkat harga. Contoh: banyak siswa membawa minuman sendiri dari rumah.</li></ul>`,
+eval:`<h2>Latihan singkat</h2><p>Harga makanan ringan naik dari Rp2.000 menjadi Rp3.000. Jumlah diminta turun dari 100 menjadi 70 bungkus.</p>
+<div class='q'><p>a. Apakah terjadi pergerakan atau pergeseran kurva?</p><details><summary>Jawaban</summary><p>Pergerakan sepanjang kurva permintaan, karena yang berubah adalah harga barang itu sendiri.</p></details></div>
+<div class='q'><p>b. Jika makanan itu menjadi tren di media sosial sehingga makin banyak orang ingin membelinya pada setiap harga, apa yang terjadi pada kurva permintaan?</p><details><summary>Jawaban</summary><p>Kurva permintaan bergeser ke kanan karena selera atau preferensi konsumen berubah.</p></details></div>
+<div class='q'><p>c. Dengan Qd = 120 − 20P, berapa jumlah diminta pada harga Rp4.000?</p><details><summary>Jawaban</summary><p>Qd = 120 − 20(4) = 40 gelas.</p></details></div>`},
+{t:'Pengertian Penawaran',target:'Memahami keputusan produsen dalam menjual barang',
+materi:`<h2>1. Apa itu penawaran?</h2>
+<p>Penawaran adalah jumlah barang atau jasa yang ingin dan mampu dijual produsen pada berbagai tingkat harga dalam periode tertentu. Produsen mempertimbangkan harga jual, biaya produksi, kapasitas, dan peluang keuntungan.</p>
+<p>Contoh: pedagang es teh bersedia menjual lebih banyak gelas ketika harga naik, selama produksi tambahan layak dan kapasitasnya cukup.</p>
+<h2>2. Penawaran vs jumlah yang ditawarkan</h2>
+<ul><li><b>Penawaran:</b> hubungan antara berbagai tingkat harga dan jumlah yang ingin serta mampu dijual.</li><li><b>Jumlah yang ditawarkan:</b> jumlah pada satu tingkat harga tertentu. Contoh: 50 gelas pada harga Rp3.000.</li></ul>
+<h2>3. Hukum penawaran</h2>
+<div class='box'>Dengan faktor lain tetap, makin tinggi harga suatu barang, makin besar jumlah yang cenderung ditawarkan produsen; makin rendah harga, makin kecil jumlah yang ditawarkan.</div>
+<ul><li>Harga lebih tinggi dapat meningkatkan keuntungan per unit.</li><li>Produsen punya insentif meningkatkan produksi.</li><li>Kapasitas yang sebelumnya tidak terpakai dapat digunakan.</li><li>Produsen baru mungkin tertarik masuk pasar.</li></ul>
+<p class='mu'>Peningkatan jumlah ditawarkan tidak selalu langsung terjadi karena produksi dibatasi bahan baku, waktu, mesin, dan tenaga kerja.</p>
+<h2>4. Contoh tabel penawaran es teh per hari</h2>
+<div class='tw'><table><tr><th>Harga per gelas</th><th>Jumlah ditawarkan</th></tr><tr><td>Rp2.000</td><td>20 gelas</td></tr><tr><td>Rp3.000</td><td>40 gelas</td></tr><tr><td>Rp4.000</td><td>60 gelas</td></tr><tr><td>Rp5.000</td><td>80 gelas</td></tr><tr><td>Rp6.000</td><td>100 gelas</td></tr></table></div>
+<p>Harga lebih tinggi berkaitan dengan jumlah ditawarkan lebih besar, faktor lain tetap.</p>
+<h2>5. Faktor yang memengaruhi penawaran</h2>
+<ul><li><b>Biaya bahan baku:</b> kenaikannya dapat mengurangi penawaran pada harga jual yang sama.</li><li><b>Teknologi:</b> yang lebih efisien meningkatkan kemampuan produksi.</li><li><b>Pajak dan subsidi:</b> pajak meningkatkan biaya, subsidi mengurangi biaya efektif produsen.</li><li><b>Jumlah produsen:</b> makin banyak produsen, penawaran pasar dapat naik.</li><li><b>Perkiraan harga masa depan:</b> memengaruhi keputusan menjual sekarang atau nanti.</li><li><b>Kondisi alam:</b> hasil panen menambah atau mengurangi penawaran produk pertanian.</li><li><b>Kapasitas produksi:</b> keterbatasan mesin, tenaga kerja, dan waktu membatasi jumlah barang.</li></ul>`,
+eval:`<h2>Latihan</h2>
+<div class='q'><p>1. Berdasarkan tabel, berapa jumlah ditawarkan pada harga Rp5.000?</p><details><summary>Jawaban</summary><p>80 gelas.</p></details></div>
+<div class='q'><p>2. Jelaskan perbedaan penawaran dan jumlah yang ditawarkan.</p><details><summary>Jawaban</summary><p>Penawaran adalah hubungan harga dan jumlah yang ingin dijual pada berbagai tingkat harga; jumlah yang ditawarkan adalah jumlah pada satu tingkat harga tertentu.</p></details></div>
+<div class='q'><p>3. Mengapa penawaran tidak selalu langsung naik ketika harga naik?</p><details><summary>Jawaban</summary><p>Karena produksi dibatasi bahan baku, waktu, mesin, dan tenaga kerja.</p></details></div>`},
+{t:'Hukum dan Kurva Penawaran',target:'Membuat serta membaca kurva penawaran',
+materi:`<h2>1. Kurva penawaran</h2>
+<p>Kurva penawaran menunjukkan hubungan harga dan jumlah yang ingin serta mampu ditawarkan produsen. Sumbu Y untuk harga, sumbu X untuk jumlah, dan kurva umumnya naik dari kiri bawah ke kanan atas.</p>
+<h2>2. Cara membuat kurva penawaran</h2>
+<div class='tw'><table><tr><th>Harga (P)</th><th>Jumlah ditawarkan (Qs)</th></tr><tr><td>Rp2.000</td><td>20</td></tr><tr><td>Rp3.000</td><td>40</td></tr><tr><td>Rp4.000</td><td>60</td></tr><tr><td>Rp5.000</td><td>80</td></tr><tr><td>Rp6.000</td><td>100</td></tr></table></div>
+${curve([[20,2],[40,3],[60,4],[80,5],[100,6]],'S')}
+<p>Plot setiap pasangan jumlah dan harga, hubungkan dengan garis, dan beri label S (Supply/Penawaran).</p>
+<h2>3. Persamaan penawaran sederhana</h2>
+<div class='f'>Qs = c + dP</div>
+<p>Qs = jumlah ditawarkan; P = harga; c = konstanta; d = koefisien positif. Contoh: Qs = −20 + 20P (P dalam ribuan rupiah, Qs dalam gelas).</p>
+<ul><li>Harga Rp3.000: Qs = −20 + 20(3) = 40 gelas.</li><li>Harga Rp4.000: Qs = −20 + 20(4) = 60 gelas.</li></ul>
+<p class='mu'>Ini model sederhana. Pada harga sangat rendah hasilnya bisa negatif, padahal jumlah ditawarkan tidak mungkin negatif, sehingga model hanya dipakai pada rentang harga yang relevan.</p>
+<h2>4. Pergerakan sepanjang kurva</h2>
+<p>Terjadi ketika harga barang itu sendiri berubah. Contoh: harga es teh naik dari Rp3.000 ke Rp4.000, jumlah ditawarkan naik dari 40 ke 60 gelas.</p>
+<h2>5. Pergeseran kurva penawaran</h2>
+<ul><li><b>Ke kanan:</b> penawaran meningkat pada setiap harga. Contoh: pedagang membeli mesin penyegel yang lebih cepat.</li><li><b>Ke kiri:</b> penawaran menurun pada setiap harga. Contoh: harga bahan baku naik sehingga produksi lebih mahal.</li></ul>`,
+eval:`<h2>Latihan singkat</h2><p>Usaha roti mengalami penurunan harga tepung sehingga biaya produksi turun dan produsen bersedia menawarkan lebih banyak roti pada setiap tingkat harga.</p>
+<div class='q'><p>a. Pergerakan atau pergeseran kurva?</p><details><summary>Jawaban</summary><p>Pergeseran kurva penawaran.</p></details></div>
+<div class='q'><p>b. Ke arah mana kurva penawaran bergeser?</p><details><summary>Jawaban</summary><p>Ke kanan, karena biaya produksi yang lebih rendah meningkatkan penawaran pada setiap tingkat harga.</p></details></div>
+<div class='q'><p>c. Dengan Qs = −20 + 20P, berapa jumlah ditawarkan pada harga Rp5.000?</p><details><summary>Jawaban</summary><p>Qs = −20 + 20(5) = 80 gelas.</p></details></div>`},
+{t:'Faktor dan Pergeseran Kurva',target:'Menganalisis perubahan kondisi pasar',
+materi:`<p>Pertemuan ini menggabungkan permintaan dan penawaran, agar mampu membedakan perubahan jumlah akibat perubahan harga dengan perubahan akibat faktor lain.</p>
+<h2>1. Ringkasan pergerakan dan pergeseran</h2>
+<div class='tw'><table><tr><th>Kondisi</th><th>Dampak terhadap kurva</th></tr><tr><td>Harga barang itu sendiri berubah</td><td>Pergerakan sepanjang kurva</td></tr><tr><td>Pendapatan konsumen berubah</td><td>Permintaan dapat bergeser</td></tr><tr><td>Selera konsumen berubah</td><td>Permintaan dapat bergeser</td></tr><tr><td>Harga bahan baku berubah</td><td>Penawaran dapat bergeser</td></tr><tr><td>Teknologi produksi berubah</td><td>Penawaran dapat bergeser</td></tr><tr><td>Jumlah pembeli atau penjual berubah</td><td>Kurva pasar dapat bergeser</td></tr></table></div>
+<h2>2. Contoh perubahan permintaan</h2>
+<p>Cuaca sangat panas: permintaan es teh meningkat, kurva permintaan bergeser ke kanan, dan jika penawaran tetap, harga dan jumlah keseimbangan cenderung naik. Sebaliknya, jika minat menurun, kurva bergeser ke kiri.</p>
+<h2>3. Contoh perubahan penawaran</h2>
+<p>Harga gula naik: biaya produksi es teh naik, penawaran menurun, kurva penawaran bergeser ke kiri, dan jika permintaan tetap, harga keseimbangan cenderung naik sedangkan jumlah keseimbangan cenderung turun. Harga pasar dipengaruhi pembeli dan juga kondisi produksi penjual.</p>
+<h2>4. Empat situasi pasar</h2>
+<div class='tw'><table><tr><th>Perubahan</th><th>Harga keseimbangan</th><th>Jumlah keseimbangan</th></tr><tr><td>Permintaan naik, penawaran tetap</td><td>Cenderung naik</td><td>Cenderung naik</td></tr><tr><td>Permintaan turun, penawaran tetap</td><td>Cenderung turun</td><td>Cenderung turun</td></tr><tr><td>Penawaran naik, permintaan tetap</td><td>Cenderung turun</td><td>Cenderung naik</td></tr><tr><td>Penawaran turun, permintaan tetap</td><td>Cenderung naik</td><td>Cenderung turun</td></tr></table></div>
+<p class='mu'>Berlaku dalam model pasar dasar dengan faktor lain tetap. Jika permintaan dan penawaran berubah bersamaan, arah perubahan tidak selalu dapat ditentukan tanpa mengetahui besar masing-masing perubahan.</p>
+<h2>5. Studi kasus: pasar telur</h2>
+<p>Harga telur naik. Dua kemungkinan penyebab:</p>
+<ul><li><b>A:</b> permintaan meningkat karena menjelang hari raya banyak keluarga membeli telur, sehingga kurva permintaan bergeser ke kanan.</li><li><b>B:</b> penawaran menurun karena produksi peternakan berkurang, sehingga kurva penawaran bergeser ke kiri.</li></ul>
+<div class='box'>Keduanya dapat menaikkan harga, tetapi penyebab ekonominya berbeda. Untuk menganalisis pasar, cari tahu faktor penyebab perubahan, bukan hanya melihat perubahan harga.</div>`,
+eval:`<h2>Latihan analisis</h2>
+<div class='q'><p>1. Harga gula naik. Apa dampaknya pada penawaran es teh, harga, dan jumlah keseimbangan (permintaan tetap)?</p><details><summary>Jawaban</summary><p>Penawaran menurun (kurva ke kiri); harga keseimbangan cenderung naik dan jumlah keseimbangan cenderung turun.</p></details></div>
+<div class='q'><p>2. Harga telur naik. Sebutkan dua kemungkinan penyebabnya dan kurva yang bergeser.</p><details><summary>Jawaban</summary><p>Permintaan naik menjelang hari raya (kurva permintaan ke kanan), atau penawaran turun karena produksi peternakan berkurang (kurva penawaran ke kiri).</p></details></div>
+<h2>Latihan menghitung</h2>
+<div class='q'><p>3. Qd = 100 − 10P dan Qs = −20 + 20P (P dalam ribuan). Pada harga Rp4.000, berapa Qd dan Qs? Apakah seimbang?</p><details><summary>Jawaban</summary><p>Qd = 100 − 10(4) = 60; Qs = −20 + 20(4) = 60. Sama, sehingga pasar seimbang.</p></details></div>
+<div class='q'><p>4. Qd = 120 − 10P dan Qs = 20 + 10P. Pada harga Rp5.000, berapa Qd dan Qs? Apakah seimbang?</p><details><summary>Jawaban</summary><p>Qd = 120 − 10(5) = 70; Qs = 20 + 10(5) = 70. Ya, seimbang pada 70 unit.</p></details></div>`}
+],
+rangkuman:`<ul><li>Permintaan: hubungan harga dengan jumlah yang ingin dan mampu dibeli konsumen.</li><li>Penawaran: hubungan harga dengan jumlah yang ingin dan mampu dijual produsen.</li><li>Harga barang itu sendiri menyebabkan pergerakan sepanjang kurva.</li><li>Faktor selain harga barang itu sendiri dapat menyebabkan pergeseran kurva.</li><li>Permintaan meningkat cenderung menaikkan harga dan jumlah keseimbangan jika penawaran tetap.</li><li>Penawaran meningkat cenderung menurunkan harga dan menaikkan jumlah keseimbangan jika permintaan tetap.</li></ul>
+<div class='box'>Selanjutnya: Minggu 4 — Keseimbangan Pasar dan Penerapannya.</div>`,
+quiz:[
+{q:'Permintaan adalah ....',o:['seluruh barang yang diproduksi perusahaan','jumlah barang yang tersedia di gudang','jumlah barang yang ingin dan mampu dibeli pada berbagai tingkat harga','jumlah barang yang wajib dibeli konsumen','jumlah keuntungan produsen'],a:2},
+{q:'Menurut hukum permintaan, jika harga barang turun dan faktor lainnya tetap, jumlah yang diminta cenderung ....',o:['turun','naik','tetap selalu','menjadi nol','tidak dapat berubah'],a:1},
+{q:'Kurva permintaan pada umumnya bergerak ....',o:['dari kiri bawah ke kanan atas','mendatar dalam semua kondisi','dari kiri atas ke kanan bawah','vertikal dalam semua kondisi','tanpa pola tertentu dalam model dasar'],a:2},
+{q:'Penurunan harga bahan baku menyebabkan produsen mampu menawarkan lebih banyak barang pada setiap tingkat harga. Hal ini menyebabkan ....',o:['kurva permintaan bergeser ke kiri','kurva permintaan bergeser ke kanan','kurva penawaran bergeser ke kiri','kurva penawaran bergeser ke kanan','jumlah pembeli pasti menurun'],a:3},
+{q:'Berikut yang menyebabkan pergerakan sepanjang kurva permintaan adalah ....',o:['perubahan selera konsumen','perubahan jumlah penduduk','perubahan harga barang itu sendiri','perubahan pendapatan konsumen','perubahan tren pasar'],a:2},
+{q:'Jika permintaan meningkat sementara penawaran tetap, harga keseimbangan dalam model dasar cenderung ....',o:['turun','naik','selalu tetap','menjadi nol','tidak memiliki hubungan'],a:1},
+{q:'Jika biaya produksi naik dan menyebabkan penawaran menurun, sementara permintaan tetap, maka harga keseimbangan cenderung ....',o:['turun','naik','selalu tetap','tidak dapat terbentuk','menjadi negatif'],a:1},
+{q:'Ketika harga suatu barang Rp5.000, jumlah yang diminta 80 unit. Ketika harga naik menjadi Rp6.000, jumlah yang diminta menjadi 60 unit. Perubahan ini menunjukkan ....',o:['pergeseran permintaan ke kanan','pergeseran penawaran ke kanan','pergerakan sepanjang kurva permintaan','pergerakan sepanjang kurva penawaran','peningkatan permintaan akibat pendapatan'],a:2}],
+uraian:[
+{q:'Jelaskan perbedaan permintaan dan jumlah yang diminta.',a:'Permintaan adalah hubungan berbagai tingkat harga dengan jumlah yang ingin dibeli; jumlah yang diminta adalah jumlah pada satu tingkat harga tertentu.'},
+{q:'Jelaskan perbedaan penawaran dan jumlah yang ditawarkan.',a:'Penawaran adalah hubungan berbagai tingkat harga dengan jumlah yang ingin dijual; jumlah yang ditawarkan adalah jumlah pada satu tingkat harga tertentu.'},
+{q:'Sebutkan lima faktor yang memengaruhi permintaan selain harga barang itu sendiri.',a:'Contoh: pendapatan konsumen, selera dan tren, harga barang substitusi, harga barang komplementer, jumlah penduduk, perkiraan harga masa depan, musim.'},
+{q:'Sebutkan lima faktor yang memengaruhi penawaran selain harga barang itu sendiri.',a:'Contoh: biaya bahan baku, teknologi, pajak dan subsidi, jumlah produsen, perkiraan harga masa depan, kondisi alam, kapasitas produksi.'},
+{q:'Jelaskan perbedaan pergerakan dan pergeseran kurva menggunakan contoh.',a:'Pergerakan terjadi karena perubahan harga barang itu sendiri (misalnya harga es teh turun dari Rp4.000 ke Rp3.000, jumlah diminta naik dari 60 ke 80). Pergeseran terjadi karena faktor lain berubah (misalnya jumlah siswa bertambah sehingga kurva permintaan bergeser ke kanan).'},
+{q:'Jelaskan mengapa kenaikan harga gula dapat memengaruhi penawaran minuman manis.',a:'Harga gula yang naik meningkatkan biaya produksi, sehingga produsen mengurangi jumlah yang ditawarkan pada harga jual yang sama dan kurva penawaran bergeser ke kiri.'}],
+tugas:`<h3>Mengamati Permintaan dan Penawaran di Pasar</h3>
+<p>Pilih satu produk yang mudah diamati, seperti telur, beras, cabai, es teh, atau gorengan. Buat laporan sederhana berisi:</p>
+<ul><li>Nama produk dan tempat penjualan.</li><li>Harga produk saat diamati.</li><li>Faktor yang dapat memengaruhi keputusan pembeli.</li><li>Faktor yang dapat memengaruhi keputusan penjual.</li><li>Prediksi jika harga produk naik.</li><li>Prediksi jika biaya produksi meningkat.</li><li>Kesimpulan tentang hubungan permintaan, penawaran, dan harga.</li></ul>
+<p>Jika memungkinkan, bandingkan harga pada dua waktu berbeda. Bedakan fakta yang benar-benar kamu amati dengan prediksi atau dugaanmu.</p>`
+},{
+id:4,start:16,title:'Minggu 4: Keseimbangan Pasar',
+sub:'Keseimbangan pasar, menghitung harga dan jumlah keseimbangan, surplus dan kekurangan, serta studi kasus penerapan ekonomi.',
+tujuan:['Menjelaskan pengertian keseimbangan pasar, harga keseimbangan, dan jumlah keseimbangan.','Menghitung harga dan jumlah keseimbangan dari persamaan permintaan dan penawaran.','Membedakan surplus dan kekurangan barang beserta dampaknya.','Menganalisis pengaruh perubahan permintaan dan penawaran terhadap keseimbangan.','Menerapkan konsep ekonomi pada studi kasus kehidupan sehari-hari.'],
+pert:[
+{t:'Pengertian Keseimbangan Pasar',target:'Memahami kondisi ketika permintaan sama dengan penawaran',
+materi:`<h2>A. Apa itu keseimbangan pasar?</h2>
+<p>Keseimbangan pasar adalah keadaan ketika jumlah barang yang diminta konsumen sama dengan jumlah barang yang ditawarkan produsen pada tingkat harga tertentu.</p>
+<div class='f'>Qd = Qs</div>
+<p>Qd = jumlah barang yang diminta (<i>quantity demanded</i>); Qs = jumlah barang yang ditawarkan (<i>quantity supplied</i>). Harga yang terbentuk disebut <b>harga keseimbangan</b>, sedangkan jumlah barangnya disebut <b>jumlah keseimbangan</b>.</p>
+<h2>B. Contoh sederhana: telur ayam</h2>
+<div class='tw'><table><tr><th>Harga per kg</th><th>Jumlah diminta</th><th>Jumlah ditawarkan</th></tr><tr><td>Rp20.000</td><td>100 kg</td><td>40 kg</td></tr><tr><td>Rp22.000</td><td>80 kg</td><td>60 kg</td></tr><tr><td><b>Rp24.000</b></td><td><b>60 kg</b></td><td><b>60 kg</b></td></tr><tr><td>Rp26.000</td><td>40 kg</td><td>80 kg</td></tr><tr><td>Rp28.000</td><td>20 kg</td><td>100 kg</td></tr></table></div>
+<p>Pada Rp24.000 per kg, jumlah diminta dan ditawarkan sama-sama 60 kg, sehingga pasar seimbang. Harga keseimbangannya Rp24.000 per kg dan jumlah keseimbangannya 60 kg.</p>
+<h2>C. Mengapa keseimbangan pasar penting?</h2>
+<p>Keseimbangan membantu menjelaskan bagaimana harga terbentuk melalui interaksi konsumen dan produsen. Namun keseimbangan tidak selalu berarti semua orang mendapatkan barang yang diinginkan atau semua produsen memperoleh keuntungan.</p>`,
+eval:`<h2>Latihan</h2>
+<div class='q'><p>1. Apa yang dimaksud dengan keseimbangan pasar?</p><details><summary>Jawaban</summary><p>Kondisi ketika jumlah yang diminta sama dengan jumlah yang ditawarkan.</p></details></div>
+<div class='q'><p>2. Apa perbedaan harga keseimbangan dan jumlah keseimbangan?</p><details><summary>Jawaban</summary><p>Harga keseimbangan adalah harga saat pasar seimbang; jumlah keseimbangan adalah jumlah barang pada harga tersebut.</p></details></div>
+<div class='q'><p>3. Jika jumlah permintaan 150 unit dan jumlah penawaran 150 unit, bagaimana kondisi pasar?</p><details><summary>Jawaban</summary><p>Pasar seimbang.</p></details></div>
+<div class='q'><p>4. Mengapa harga pasar dapat berubah?</p><details><summary>Jawaban</summary><p>Karena perubahan permintaan, penawaran, biaya produksi, selera, pendapatan, dan faktor lainnya.</p></details></div>`},
+{t:'Cara Menghitung Harga dan Jumlah Keseimbangan',target:'Menghitung keseimbangan dengan persamaan',
+materi:`<p>Keseimbangan pasar dapat dihitung menggunakan persamaan permintaan dan penawaran.</p>
+<h2>A. Bentuk persamaan</h2>
+<div class='f'>Qd = 100 − 2P</div><div class='f'>Qs = 20 + 2P</div>
+<p>Q = jumlah barang; P = harga barang dalam ribuan rupiah. Karena keseimbangan terjadi ketika Qd = Qs:</p>
+<div class='f'>100 − 2P = 20 + 2P<br>100 − 20 = 2P + 2P<br>80 = 4P<br>P = 20</div>
+<p>Karena harga dalam ribuan rupiah, harga keseimbangannya <b>Rp20.000</b>.</p>
+<h2>B. Menghitung jumlah keseimbangan</h2>
+<div class='f'>Qd = 100 − 2(20) = 100 − 40 = 60<br>Qs = 20 + 2(20) = 60 (pengecekan)</div>
+<p>Jadi harga keseimbangan Rp20.000 dan jumlah keseimbangan 60 unit.</p>
+<h2>C. Cara mudah mengingat</h2>
+<ul><li>Samakan persamaan permintaan dan penawaran.</li><li>Cari nilai P.</li><li>Masukkan nilai P ke salah satu persamaan untuk mencari Q.</li><li>Periksa apakah hasil permintaan dan penawaran sama.</li></ul>`,
+eval:`<h2>Latihan</h2><p>Diketahui Qd = 120 − 2P dan Qs = 30 + P. Tentukan harga dan jumlah keseimbangan.</p>
+<div class='q'><details><summary>Pembahasan</summary><div class='f'>120 − 2P = 30 + P<br>120 − 30 = 3P<br>90 = 3P<br>P = 30<br>Qd = 120 − 2(30) = 60</div><p>Harga keseimbangan 30 satuan harga (jika dalam ribuan rupiah, Rp30.000) dan jumlah keseimbangan 60 unit.</p></details></div>`},
+{t:'Surplus dan Kekurangan Barang',target:'Menganalisis ketidakseimbangan pasar',
+materi:`<p>Tidak semua harga di pasar adalah harga keseimbangan. Jika harga terlalu tinggi atau terlalu rendah, pasar dapat mengalami ketidakseimbangan.</p>
+<h2>A. Surplus</h2>
+<p>Surplus terjadi ketika jumlah ditawarkan lebih besar daripada jumlah diminta (<b>Qs &gt; Qd</b>).</p>
+<p>Contoh: pedagang menawarkan 100 kg beras, konsumen hanya ingin membeli 60 kg. Surplus = 100 − 60 = 40 kg. Surplus dapat terjadi ketika harga terlalu tinggi sehingga konsumen mengurangi pembelian.</p>
+<ul><li>Barang tidak terjual.</li><li>Persediaan menumpuk.</li><li>Pedagang mungkin menurunkan harga.</li></ul>
+<h2>B. Kekurangan barang (shortage)</h2>
+<p>Kekurangan terjadi ketika jumlah diminta lebih besar daripada jumlah ditawarkan (<b>Qd &gt; Qs</b>).</p>
+<p>Contoh: konsumen ingin membeli 100 kg beras, pedagang hanya menyediakan 60 kg. Kekurangan = 100 − 60 = 40 kg.</p>
+<ul><li>Konsumen kesulitan memperoleh barang.</li><li>Antrean dapat terjadi.</li><li>Harga cenderung naik jika mekanisme pasar dibiarkan bekerja.</li></ul>
+<h2>C. Perbandingan</h2>
+<div class='tw'><table><tr><th>Kondisi</th><th>Hubungan</th><th>Contoh dampak</th></tr><tr><td>Surplus</td><td>Qs &gt; Qd</td><td>Barang menumpuk</td></tr><tr><td>Kekurangan</td><td>Qd &gt; Qs</td><td>Barang sulit diperoleh</td></tr><tr><td>Seimbang</td><td>Qd = Qs</td><td>Tidak ada kelebihan atau kekurangan pada harga tersebut</td></tr></table></div>
+<p class='mu'>Kecenderungan harga ini berlaku dalam mekanisme pasar yang kompetitif. Kebijakan pemerintah, harga maksimum, harga minimum, dan faktor lain dapat memengaruhi hasil akhirnya.</p>`,
+eval:`<h2>Latihan</h2>
+<div class='q'><p>1. Pedagang menawarkan 200 bungkus makanan, konsumen hanya membeli 150 bungkus. Berapa surplusnya?</p><details><summary>Jawaban</summary><p>50 bungkus.</p></details></div>
+<div class='q'><p>2. Permintaan cabai 500 kg, penawaran hanya 350 kg. Berapa kekurangannya?</p><details><summary>Jawaban</summary><p>150 kg.</p></details></div>
+<div class='q'><p>3. Apa yang mungkin dilakukan pedagang ketika barang mengalami surplus?</p><details><summary>Jawaban</summary><p>Menurunkan harga, melakukan promosi, atau mengurangi penawaran berikutnya.</p></details></div>
+<div class='q'><p>4. Mengapa kekurangan barang dapat mendorong kenaikan harga?</p><details><summary>Jawaban</summary><p>Karena banyak konsumen bersaing memperoleh barang yang jumlahnya terbatas.</p></details></div>`},
+{t:'Perubahan Permintaan dan Penawaran terhadap Keseimbangan',target:'Menganalisis perubahan harga dan jumlah keseimbangan',
+materi:`<p>Harga dan jumlah keseimbangan dapat berubah ketika permintaan atau penawaran berubah.</p>
+<h2>A. Permintaan meningkat</h2>
+<p>Contoh: menjelang Lebaran, permintaan pakaian meningkat. Jika penawaran tetap: harga keseimbangan naik, jumlah keseimbangan naik, karena lebih banyak konsumen ingin membeli pada setiap tingkat harga.</p>
+<h2>B. Permintaan menurun</h2>
+<p>Contoh: minat terhadap suatu model pakaian menurun. Jika penawaran tetap: harga turun, jumlah turun.</p>
+<h2>C. Penawaran meningkat</h2>
+<p>Contoh: panen cabai melimpah. Jika permintaan tetap: harga turun, jumlah naik.</p>
+<h2>D. Penawaran menurun</h2>
+<p>Contoh: gagal panen membuat persediaan cabai berkurang. Jika permintaan tetap: harga naik, jumlah turun.</p>
+<h2>E. Tabel ringkasan</h2>
+<div class='tw'><table><tr><th>Perubahan</th><th>Harga keseimbangan</th><th>Jumlah keseimbangan</th></tr><tr><td>Permintaan naik</td><td>Naik</td><td>Naik</td></tr><tr><td>Permintaan turun</td><td>Turun</td><td>Turun</td></tr><tr><td>Penawaran naik</td><td>Turun</td><td>Naik</td></tr><tr><td>Penawaran turun</td><td>Naik</td><td>Turun</td></tr></table></div>
+<p class='mu'>Tabel mengasumsikan faktor lainnya tetap (<i>ceteris paribus</i>).</p>`,
+eval:`<h2>Latihan analisis</h2><p>Tentukan kecenderungan perubahan harga dan jumlah keseimbangan.</p>
+<div class='q'><p>1. Pendapatan masyarakat meningkat dan permintaan sepeda motor naik, penawaran tetap.</p><details><summary>Jawaban</summary><p>Harga naik, jumlah naik.</p></details></div>
+<div class='q'><p>2. Panen tomat melimpah, permintaan tetap.</p><details><summary>Jawaban</summary><p>Harga turun, jumlah naik.</p></details></div>
+<div class='q'><p>3. Biaya bahan baku roti naik sehingga produsen mengurangi penawaran, permintaan tetap.</p><details><summary>Jawaban</summary><p>Harga naik, jumlah turun.</p></details></div>
+<div class='q'><p>4. Minat masyarakat terhadap minuman tertentu menurun, penawaran tetap.</p><details><summary>Jawaban</summary><p>Harga turun, jumlah turun.</p></details></div>`},
+{t:'Studi Kasus Ekonomi dalam Kehidupan Sehari-hari',target:'Menerapkan seluruh konsep dasar ekonomi',
+materi:`<p>Pertemuan ini menggabungkan seluruh materi: kebutuhan, kelangkaan, pilihan, perilaku konsumen, produksi, biaya, permintaan, penawaran, dan keseimbangan pasar.</p>
+<h2>Studi kasus: penjualan es teh di lingkungan sekolah</h2>
+<p>Seorang siswa membuka usaha es teh saat jam istirahat dengan harga Rp5.000 per gelas. Data perkiraan pasar pada harga tersebut:</p>
+<div class='tw'><table><tr><th>Keterangan</th><th>Jumlah per hari</th></tr><tr><td>Permintaan konsumen</td><td>80 gelas</td></tr><tr><td>Penawaran penjual</td><td>60 gelas</td></tr><tr><td>Kekurangan</td><td>20 gelas</td></tr></table></div>
+<p>Permintaan lebih besar daripada penawaran: 80 − 60 = 20 gelas. Artinya, pada harga tersebut terdapat kekurangan penawaran sebanyak 20 gelas.</p>
+<div class='box'>Buka tab <b>Evaluasi</b> untuk menganalisis kasus ini. Tugas praktik ada di halaman Evaluasi Minggu.</div>`,
+eval:`<h2>Analisis kasus</h2>
+<div class='q'><p>1. Mengapa kekurangan terjadi?</p><details><summary>Jawaban</summary><p>Jumlah konsumen yang ingin membeli lebih banyak daripada jumlah es teh yang tersedia.</p></details></div>
+<div class='q'><p>2. Apa yang dapat dilakukan penjual?</p><details><summary>Jawaban</summary><ul><li>Menambah produksi jika bahan dan tenaga tersedia.</li><li>Mengatur persediaan es, gula, teh, dan gelas.</li><li>Menghitung kembali biaya produksi.</li><li>Mempertimbangkan harga jual dengan memperhatikan kemampuan beli siswa dan harga pesaing.</li></ul></details></div>
+<div class='q'><p>3. Apakah penjual sebaiknya langsung menaikkan harga?</p><details><summary>Jawaban</summary><p>Belum tentu. Penjual perlu mempertimbangkan daya beli siswa, biaya produksi, harga pesaing, serta kemungkinan menambah produksi. Harga lebih tinggi juga bisa membuat sebagian siswa tidak jadi membeli.</p></details></div>
+<div class='q'><p>4. Apa hubungan kasus ini dengan kelangkaan?</p><details><summary>Jawaban</summary><p>Es teh yang tersedia terbatas dibandingkan keinginan konsumen. Penjual harus menentukan penggunaan bahan, waktu, tenaga, dan modal secara efisien.</p></details></div>`}
+],
+rangkuman:`<div class='tw'><table><tr><th>Minggu</th><th>Materi utama</th></tr><tr><td>1</td><td>Dasar ekonomi, kebutuhan, kelangkaan, pilihan, dan skala prioritas</td></tr><tr><td>2</td><td>Konsumen, produsen, produksi, biaya, pendapatan, laba, dan rugi</td></tr><tr><td>3</td><td>Permintaan, penawaran, kurva, dan faktor yang memengaruhinya</td></tr><tr><td>4</td><td>Keseimbangan pasar, perhitungan harga, surplus, kekurangan, dan studi kasus</td></tr></table></div>
+<div class='box'>Selamat! Setelah empat minggu ini kamu telah mempelajari fondasi ekonomi dasar. Langkah selanjutnya yang cocok: ekonomi mikro (elastisitas permintaan dan penawaran, struktur pasar, perilaku konsumen), lalu ekonomi makro (inflasi, pengangguran, pertumbuhan ekonomi, dan kebijakan pemerintah).</div>`,
+quiz:[
+{q:'Kondisi ketika jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan disebut ....',o:['Kelangkaan','Surplus','Keseimbangan pasar','Konsumsi','Produksi'],a:2},
+{q:'Jika jumlah penawaran lebih besar daripada jumlah permintaan, pasar mengalami ....',o:['Kekurangan','Surplus','Keseimbangan','Kelangkaan tenaga kerja','Peningkatan kebutuhan'],a:1},
+{q:'Ketika permintaan meningkat dan penawaran tetap, harga keseimbangan cenderung ....',o:['Turun','Tetap selamanya','Naik','Menjadi nol','Tidak dapat berubah'],a:2},
+{q:'Panen sayuran melimpah dan permintaan tetap. Dampak yang umumnya terjadi adalah ....',o:['Harga naik dan jumlah turun','Harga turun dan jumlah naik','Harga naik dan jumlah naik','Harga turun dan jumlah turun','Tidak ada perubahan apa pun'],a:1},
+{q:'Diketahui Qd = 100 − 2P dan Qs = 20 + 2P. Harga keseimbangannya adalah ....',o:['10','15','20','30','40'],a:2},
+{q:'Berdasarkan soal nomor 5, jumlah keseimbangannya adalah ....',o:['20 unit','40 unit','50 unit','60 unit','80 unit'],a:3},
+{q:'Seorang pedagang memiliki 120 roti, tetapi konsumen hanya membeli 90 roti. Kondisi tersebut menunjukkan ....',o:['Surplus 30 roti','Kekurangan 30 roti','Keseimbangan 90 roti','Surplus 90 roti','Kekurangan 120 roti'],a:0},
+{q:'Faktor yang dapat meningkatkan penawaran suatu produk adalah ....',o:['Biaya produksi meningkat tajam','Bahan baku semakin sulit diperoleh','Teknologi produksi semakin efisien','Jumlah produsen berkurang','Gangguan distribusi semakin besar'],a:2},
+{q:'Harga suatu barang naik, lalu konsumen mengurangi jumlah pembelian barang tersebut. Dengan faktor lain tetap, hal ini sesuai dengan ....',o:['Hukum penawaran','Hukum permintaan','Hukum produksi','Hukum konsumsi','Hukum kelangkaan'],a:1},
+{q:'Seorang pengusaha menambah produksi karena banyak konsumen ingin membeli produknya. Keputusan tersebut berkaitan dengan ....',o:['Hubungan permintaan dan penawaran','Penghapusan biaya produksi','Hilangnya kelangkaan','Berakhirnya kegiatan ekonomi','Tidak adanya risiko usaha'],a:0}],
+uraian:[
+{q:'Jelaskan pengertian keseimbangan pasar dengan contoh.',a:'Keseimbangan pasar adalah kondisi ketika jumlah diminta sama dengan jumlah ditawarkan. Contoh: pada harga Rp24.000 per kg, jumlah telur yang diminta dan ditawarkan sama-sama 60 kg.'},
+{q:'Jelaskan perbedaan surplus dan kekurangan barang.',a:'Surplus terjadi ketika jumlah ditawarkan lebih besar daripada jumlah diminta (Qs > Qd), sehingga barang menumpuk. Kekurangan terjadi ketika jumlah diminta lebih besar daripada jumlah ditawarkan (Qd > Qs), sehingga barang sulit diperoleh.'},
+{q:'Diketahui Qd = 150 − 3P dan Qs = 30 + 2P. Hitung harga dan jumlah keseimbangannya.',a:'150 − 3P = 30 + 2P → 120 = 5P → P = 24. Qd = 150 − 3(24) = 78. Harga keseimbangan 24 satuan harga (jika dalam ribuan rupiah, Rp24.000) dan jumlah keseimbangan 78 unit.'},
+{q:'Mengapa harga cabai dapat naik ketika terjadi gagal panen?',a:'Gagal panen mengurangi persediaan (penawaran menurun) sehingga kurva penawaran bergeser ke kiri. Jika permintaan tetap, terjadi kekurangan barang, konsumen bersaing mendapatkannya, dan harga keseimbangan cenderung naik.'},
+{q:'Jelaskan bagaimana seorang pengusaha kecil dapat menggunakan konsep permintaan dan penawaran untuk menentukan jumlah produksinya.',a:'Pengusaha mengamati permintaan (jumlah yang dibeli konsumen pada harga tertentu) lalu menyesuaikan produksi sesuai kemampuan bahan, tenaga, dan modal. Jika sering kekurangan barang, produksi dapat ditambah; jika sering surplus, produksi dikurangi atau harga dan promosi disesuaikan.'}],
+tugas:`<h3>Tugas praktik: Analisis Usaha Kecil</h3>
+<p>Pilih satu usaha kecil di sekitar rumah atau sekolah, misalnya warung nasi, penjual gorengan, es teh, atau toko alat tulis. Jawab:</p>
+<ul><li>Apa produk yang dijual?</li><li>Siapa target konsumennya?</li><li>Kebutuhan apa yang dipenuhi produk tersebut?</li><li>Apa saja bahan dan alat produksinya?</li><li>Biaya apa saja yang dikeluarkan?</li><li>Faktor apa yang dapat meningkatkan permintaan?</li><li>Faktor apa yang dapat meningkatkan penawaran?</li><li>Apakah pernah terjadi barang habis atau tidak terjual?</li><li>Apa solusi yang dapat dilakukan pemilik usaha?</li><li>Apa kesimpulanmu tentang hubungan harga, permintaan, dan penawaran?</li></ul>
+<p>Jika memungkinkan, lakukan pengamatan langsung dan tanyakan kepada pemilik usaha. Jangan mengarang data; jika data tidak tersedia, tuliskan bahwa data tersebut merupakan perkiraan.</p>`
+}];
+
+/* ====== RENDER ====== */
+const $=document.getElementById("app");
+const L=(h,t)=>`<a href="#${h}">${t}</a>`;
+function quiz(w){return w.quiz.map((x,i)=>`<div class="q"><b>${i+1}.</b> ${x.q}${x.o.map((o,j)=>`<button class="o" data-a="${x.a}" data-j="${j}">${"ABCDE"[j]}. ${o}</button>`).join("")}</div>`).join("")}
+function render0(){
+ const [wi,pi,tab]=location.hash.slice(2).split("/");
+ const w=W.find(x=>x.id==wi);let h="";
+ if(!w){h=`<h1>Materi Ekonomi</h1><p class="mu">Pilih minggu pembelajaran.</p>`+W.map(w=>`<a class="card" href="#/${w.id}"><b>${w.title}</b><span>${w.pert.length} pertemuan · ${w.sub}</span></a>`).join("")}
+ else if(pi==="eval"){
+  h=`<div class="crumb">${L("","Beranda")} › ${L("/"+w.id,"Minggu "+w.id)}</div><h1>Evaluasi Minggu ${w.id}</h1><p class="mu">Coba jawab tanpa melihat rangkuman. Ketuk pilihan untuk memeriksa jawaban.</p><h2>Bagian 1 — Pilihan ganda</h2>${quiz(w)}<h2>Bagian 2 — Soal uraian</h2>`+w.uraian.map((u,i)=>`<div class="q"><b>${i+1}.</b> ${u.q}<details><summary>Pedoman jawaban</summary><p>${u.a}</p></details></div>`).join("")+`<h2>Tugas praktik akhir minggu</h2>${w.tugas}<div class="nav">${L("/"+w.id,"‹ Kembali")}<span></span></div>`}
+ else if(pi!==undefined){
+  const i=+pi-1,p=w.pert[i];if(!p){location.hash="/"+w.id;return}const n=(w.start||1)+i;
+  const t=tab==="e"?"e":"m";
+  h=`<div class="crumb">${L("","Beranda")} › ${L("/"+w.id,"Minggu "+w.id)} › Pertemuan ${n}</div><h1>Pertemuan ${n}</h1><p class="mu">${p.t}</p>
+  <div class="tabs">${L(`/${w.id}/${pi}/m`,"Materi").replace("<a",t=="m"?'<a class="on"':"<a")}${L(`/${w.id}/${pi}/e`,"Evaluasi").replace("<a",t=="e"?'<a class="on"':"<a")}</div>${t=="m"?p.materi:p.eval}
+  <div class="nav">${i>0?L(`/${w.id}/${i}/${t}`,"‹ Pertemuan "+(n-1)):"<span></span>"}${i<w.pert.length-1?L(`/${w.id}/${i+2}/${t}`,"Pertemuan "+(n+1)+" ›"):L(`/${w.id}/eval`,"Evaluasi Minggu ›")}</div>`}
+ else{
+  h=`<div class="crumb">${L("","Beranda")} › Minggu ${w.id}</div><h1>${w.title}</h1><p class="mu">${w.sub}</p><h2>Tujuan pembelajaran</h2><ul>${w.tujuan.map(t=>`<li>${t}</li>`).join("")}</ul><h2>Pertemuan</h2>`+w.pert.map((p,i)=>`<a class="card" href="#/${w.id}/${i+1}/m"><b><span class="num">${(w.start||1)+i}</span>${p.t}</b><span>Target: ${p.target}</span></a>`).join("")+`<a class="card" href="#/${w.id}/eval"><b>Evaluasi Minggu ${w.id}</b><span>Pilihan ganda, uraian, dan tugas praktik</span></a><h2>Rangkuman</h2>${w.rangkuman}`}
+ $.innerHTML=h;scrollTo(0,0);
+}
+document.addEventListener("click",e=>{const b=e.target.closest(".o");if(!b)return;const q=b.parentElement;if(q.dataset.done)return;q.dataset.done=1;q.querySelectorAll(".o").forEach(o=>{if(o.dataset.j==o.dataset.a)o.classList.add("ok");else if(o===b)o.classList.add("no")})});
+const st=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}},sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const COL=['#0f6e56','#2563a8','#b45309','#7c3aed'];
+const bar=p=>`<div class='bar'><i style='width:${p}%'></i></div>`;
+const cnt=w=>{const d=st('ekon-done',{});return w.pert.filter((_,i)=>d[w.id+'/'+(i+1)]).length};
+const KUIS={
+1:[
+{q:'Mengapa manusia harus memilih dalam memenuhi kebutuhannya?',o:['Karena semua barang gratis','Karena sumber daya terbatas sedangkan kebutuhan beragam','Karena kebutuhan manusia sedikit','Karena harga barang selalu naik'],a:1,e:'Sumber daya (uang, waktu, tenaga) terbatas, sedangkan kebutuhan beragam. Karena tidak semua dapat dipenuhi sekaligus, manusia harus menentukan pilihan dan prioritas.'},
+{q:'Meja belajar dan kipas angin termasuk kebutuhan ....',o:['primer','sekunder','tersier','kolektif'],a:1,e:'Kebutuhan sekunder adalah pelengkap yang menambah kenyamanan setelah kebutuhan primer (makanan, pakaian layak, tempat tinggal) terpenuhi.'},
+{q:'Usaha keripik membutuhkan 100 kg singkong per minggu, tetapi pemasok hanya dapat menyediakan 60 kg. Kekurangan bahan bakunya adalah ....',o:['20 kg','40 kg','60 kg','160 kg'],a:1,e:'100 kg − 60 kg = 40 kg. Kekurangan ini adalah contoh kelangkaan akibat gagal panen.'},
+{q:'Dina memilih pelatihan akuntansi (manfaat Rp100.000) dan melepaskan bekerja paruh waktu (Rp80.000) serta menonton film (Rp40.000). Biaya peluangnya adalah ....',o:['Rp40.000','Rp80.000','Rp100.000','Rp120.000'],a:1,e:'Biaya peluang adalah nilai alternatif terbaik berikutnya yang dikorbankan, yaitu bekerja paruh waktu Rp80.000, bukan jumlah seluruh pilihan yang ditinggalkan.'},
+{q:'Andi punya Rp200.000. Ia mendahulukan transportasi (Rp50.000), makan (Rp70.000), dan buku (Rp40.000). Sisa uangnya adalah ....',o:['Rp20.000','Rp40.000','Rp60.000','Rp160.000'],a:1,e:'Pengeluaran = 50.000 + 70.000 + 40.000 = Rp160.000. Sisa = Rp200.000 − Rp160.000 = Rp40.000, yang dapat disimpan atau dipakai untuk kebutuhan lain.'}],
+2:[
+{q:'Teh dan kopi bagi konsumen tertentu merupakan contoh barang ....',o:['komplementer','substitusi','tersier','modal'],a:1,e:'Barang substitusi dapat saling menggantikan fungsinya. Jika harga kopi naik, sebagian konsumen beralih ke teh.'},
+{q:'Utilitas total roti ke-2 adalah 18 dan roti ke-3 adalah 24. Utilitas marginal roti ke-3 adalah ....',o:['4','6','8','24'],a:1,e:'MU = ΔTU / ΔQ = (24 − 18) / 1 = 6.'},
+{q:'Pekerja menghasilkan 60 bungkus keripik dalam 4 jam. Produktivitasnya adalah ....',o:['10 bungkus per jam','15 bungkus per jam','20 bungkus per jam','240 bungkus per jam'],a:1,e:'Produktivitas = output / input = 60 ÷ 4 = 15 bungkus per jam.'},
+{q:'Biaya tetap Rp100.000 dan biaya variabel Rp3.000 per bungkus. Biaya total untuk 40 bungkus adalah ....',o:['Rp120.000','Rp140.000','Rp220.000','Rp340.000'],a:2,e:'Biaya variabel = 40 × Rp3.000 = Rp120.000. TC = TFC + TVC = Rp100.000 + Rp120.000 = Rp220.000.'},
+{q:'Usaha menjual 80 bungkus seharga Rp4.000 dengan biaya total Rp250.000. Hasil usahanya adalah ....',o:['laba Rp70.000','laba Rp320.000','laba Rp250.000','rugi Rp70.000'],a:0,e:'TR = 80 × Rp4.000 = Rp320.000. Laba = TR − TC = Rp320.000 − Rp250.000 = Rp70.000.'}],
+3:[
+{q:'Harga es teh naik dan jumlah yang diminta turun, faktor lain tetap. Hal ini menunjukkan ....',o:['pergeseran kurva permintaan ke kiri','pergerakan sepanjang kurva permintaan','pergeseran kurva penawaran ke kanan','permintaan menjadi nol'],a:1,e:'Perubahan harga barang itu sendiri menyebabkan pergerakan sepanjang kurva, bukan pergeseran kurva.'},
+{q:'Cuaca sangat panas membuat permintaan es teh meningkat. Kurva permintaan akan ....',o:['bergeser ke kiri','bergeser ke kanan','tetap di tempat','menjadi vertikal'],a:1,e:'Faktor selain harga (cuaca) berubah, sehingga permintaan meningkat pada setiap tingkat harga dan kurva bergeser ke kanan.'},
+{q:'Diketahui Qd = 120 − 20P (P dalam ribuan rupiah). Jumlah diminta pada harga Rp3.000 adalah ....',o:['40','60','80','100'],a:1,e:'Qd = 120 − 20(3) = 120 − 60 = 60.'},
+{q:'Diketahui Qs = −20 + 20P (P dalam ribuan rupiah). Jumlah ditawarkan pada harga Rp4.000 adalah ....',o:['40','50','60','80'],a:2,e:'Qs = −20 + 20(4) = −20 + 80 = 60.'},
+{q:'Harga gula naik. Dampaknya pada penawaran es teh adalah ....',o:['kurva penawaran bergeser ke kanan','kurva penawaran bergeser ke kiri','kurva permintaan bergeser ke kanan','tidak berpengaruh'],a:1,e:'Harga gula (bahan baku) naik, biaya produksi meningkat, sehingga penawaran menurun dan kurva penawaran bergeser ke kiri.'}],
+4:[
+{q:'Diketahui Qd = 200 − 4P dan Qs = 40 + 4P. Harga keseimbangannya adalah ....',o:['10','20','30','40'],a:1,e:'Samakan: 200 − 4P = 40 + 4P → 160 = 8P → P = 20.'},
+{q:'Berdasarkan soal sebelumnya, jumlah keseimbangannya adalah ....',o:['80','100','120','160'],a:2,e:'Qd = 200 − 4(20) = 120. Pengecekan: Qs = 40 + 4(20) = 120.'},
+{q:'Pedagang menawarkan 200 bungkus makanan, tetapi konsumen hanya membeli 150 bungkus. Kondisi pasar adalah ....',o:['kekurangan 50 bungkus','surplus 50 bungkus','seimbang','surplus 150 bungkus'],a:1,e:'Jumlah ditawarkan lebih besar daripada jumlah diminta (Qs > Qd), maka surplus = 200 − 150 = 50 bungkus.'},
+{q:'Terjadi gagal panen cabai, sedangkan permintaan tetap. Dampak yang umumnya terjadi adalah ....',o:['harga turun, jumlah naik','harga naik, jumlah turun','harga naik, jumlah naik','harga turun, jumlah turun'],a:1,e:'Penawaran menurun (kurva ke kiri). Dengan permintaan tetap, harga keseimbangan naik dan jumlah keseimbangan turun.'},
+{q:'Pada harga Rp5.000, jumlah es teh yang diminta 80 gelas dan yang ditawarkan 60 gelas. Kondisinya adalah ....',o:['surplus 20 gelas','kekurangan 20 gelas','seimbang','kekurangan 140 gelas'],a:1,e:'Qd > Qs, sehingga terjadi kekurangan barang sebesar 80 − 60 = 20 gelas.'}]};
+function render(){
+ const [wi,pi]=location.hash.slice(2).split('/'),w=W.find(x=>x.id==wi),ks=st('ekon-kuis',{}),done=st('ekon-done',{});
+ if(!w){
+  const tot=W.reduce((a,x)=>a+x.pert.length,0),dn=W.reduce((a,x)=>a+cnt(x),0);
+  $.innerHTML=`<div class='hero'><h1>Materi Ekonomi Dasar</h1><p>Belajar mandiri ${W.length} minggu: materi, latihan, evaluasi, dan kuis.</p>${bar(tot?Math.round(dn/tot*100):0)}<span class='mu'>${dn} dari ${tot} pertemuan selesai</span></div>`+W.map((x,k)=>{const s=x.start||1,c=cnt(x),q=ks[x.id];return `<a class='card' style='border-left:6px solid ${COL[k%4]}' href='#/${x.id}'><b>${x.title}</b><span>Pertemuan ${s}–${s+x.pert.length-1} · ${c}/${x.pert.length} selesai${q?` · kuis terbaik ${q.s}/${q.n}`:''}</span>${bar(Math.round(c/x.pert.length*100))}</a>`}).join('');
+  scrollTo(0,0);return}
+ if(pi==='kuis'){
+  const K=KUIS[w.id]||[];
+  $.innerHTML=`<div class='crumb'>${L('','Beranda')} › ${L('/'+w.id,'Minggu '+w.id)} › Kuis</div><h1>Kuis Minggu ${w.id}</h1><p class='mu'>${K.length} soal dari materi minggu ini. Jawab semua soal, lalu tekan Periksa jawaban untuk melihat skor dan pembahasan.</p><div id='res'></div>`+K.map((x,i)=>`<div class='q kq' data-a='${x.a}'><b>${i+1}.</b> ${x.q}${x.o.map((o,j)=>`<button class='ko' data-j='${j}'>${'ABCD'[j]}. ${o}</button>`).join('')}<div class='pb' hidden><b>Pembahasan:</b> ${x.e}</div></div>`).join('')+`<button class='btn' id='cek'>Periksa jawaban</button>`;
+  scrollTo(0,0);return}
+ render0();
+ if(pi===undefined){
+  const c=cnt(w),q=ks[w.id],K=KUIS[w.id]||[];
+  $.querySelector('p.mu').insertAdjacentHTML('afterend',bar(Math.round(c/w.pert.length*100))+`<span class='mu'>${c} dari ${w.pert.length} pertemuan selesai</span>`);
+  $.querySelectorAll('a.card[href$="/m"]').forEach((a,i)=>{if(done[w.id+'/'+(i+1)])a.querySelector('b').insertAdjacentHTML('beforeend',' ✓')});
+  if(K.length)$.querySelector('a.card[href$="/eval"]').insertAdjacentHTML('beforebegin',`<a class='card' href='#/${w.id}/kuis'><b>Kuis Minggu ${w.id}</b><span>${K.length} soal dengan skor dan pembahasan${q?` · skor terbaik ${q.s}/${q.n}`:''}</span></a>`);
+ }else if(pi!=='eval'){
+  const k=w.id+'/'+pi;
+  $.querySelectorAll('.box').forEach(b=>{const t=b.textContent.trim(),c=/^Contoh/.test(t)?'bx-c':/^(Kesimpulan|Inti|Selamat)/.test(t)?'bx-k':/^(Catatan|Penting)/.test(t)?'bx-n':'';if(c)b.classList.add(c)});
+  $.querySelector('.nav').insertAdjacentHTML('beforebegin',`<button class='btn done${done[k]?' on':''}' data-k='${k}'>${done[k]?'✓ Selesai':'Tandai selesai'}</button>`);
+ }
+}
+document.addEventListener('click',e=>{
+ const ko=e.target.closest('.ko');
+ if(ko){const q=ko.closest('.kq');if(q.dataset.lock)return;q.querySelectorAll('.ko').forEach(o=>o.classList.remove('sel'));ko.classList.add('sel');return}
+ const d=e.target.closest('.done');
+ if(d){const s=st('ekon-done',{}),k=d.dataset.k;if(s[k])delete s[k];else s[k]=1;sv('ekon-done',s);d.classList.toggle('on',!!s[k]);d.textContent=s[k]?'✓ Selesai':'Tandai selesai';return}
+ if(e.target.id==='ulang'){render();return}
+ if(e.target.id==='cek'){
+  const qs=[...document.querySelectorAll('.kq')],res=document.getElementById('res');
+  if(qs.some(q=>!q.querySelector('.sel'))){res.innerHTML=`<p class='warn'>Masih ada soal yang belum dijawab.</p>`;res.scrollIntoView({block:'center'});return}
+  let s=0;
+  qs.forEach(q=>{const a=q.dataset.a,sel=q.querySelector('.sel');q.dataset.lock=1;q.querySelectorAll('.ko').forEach(o=>{if(o.dataset.j===a)o.classList.add('ok');else if(o===sel)o.classList.add('no')});if(sel.dataset.j===a)s++;q.querySelector('.pb').hidden=false});
+  const n=qs.length,p=Math.round(s/n*100),ks=st('ekon-kuis',{}),id=location.hash.split('/')[1];
+  if(!ks[id]||ks[id].s<s)ks[id]={s,n};sv('ekon-kuis',ks);
+  res.innerHTML=`<div class='score'><big>${s}/${n}</big>Nilai ${p}. ${p>=80?'Hebat! Pemahamanmu sudah kuat.':p>=60?'Cukup baik. Baca pembahasan, lalu ulangi bagian yang masih keliru.':'Ayo pelajari lagi materinya, lalu coba kuis ini kembali.'}<button class='btn' id='ulang'>Ulangi kuis</button></div>`;
+  e.target.remove();res.scrollIntoView({behavior:'smooth'});
+ }
+});
+
+function shell(){
+ const [wi,pi]=location.hash.slice(2).split('/'),done=st('ekon-done',{}),
+ tot=W.reduce((a,x)=>a+x.pert.length,0),dn=W.reduce((a,x)=>a+cnt(x),0);
+ document.getElementById('prog').textContent=dn+' dari '+tot+' pertemuan selesai';
+ let h=`<a class="si${wi?'':' on'}" href="#"><span class="n">⌂</span>Beranda</a>`;
+ W.forEach(w=>{const on=w.id==wi,s=w.start||1;
+  h+=`<a class="si${on&&!pi?' on':''}" href="#/${w.id}"><span class="n">${w.id}</span><span>${w.title.replace(/^Minggu \d+:\s*/,'')}</span><em>${cnt(w)}/${w.pert.length}</em></a>`;
+  if(on){w.pert.forEach((p,i)=>{h+=`<a class="si sub${pi==i+1?' on':''}" href="#/${w.id}/${i+1}/m">${done[w.id+'/'+(i+1)]?'✓ ':''}Pertemuan ${s+i}: ${p.t}</a>`});
+   if((KUIS[w.id]||[]).length)h+=`<a class="si ex${pi==='kuis'?' on':''}" href="#/${w.id}/kuis">Kuis minggu ${w.id}</a>`;
+   h+=`<a class="si ex${pi==='eval'?' on':''}" href="#/${w.id}/eval">Evaluasi minggu ${w.id}</a>`}});
+ document.getElementById('side').innerHTML=h;document.body.classList.remove('open');
+}
+const tg=()=>document.body.classList.toggle('open');
+document.getElementById('mb').onclick=tg;document.getElementById('sc').onclick=tg;
+document.addEventListener('click',e=>{if(e.target.closest('.done'))setTimeout(shell,0)});
+addEventListener("hashchange",()=>{render();shell()});render();shell();
+</script>
+</body>
+</html>

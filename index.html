@@ -80,7 +80,7 @@ summary{cursor:pointer;font-weight:700;color:var(--ac);padding:8px 0}details p{m
 const curve=(pts,lb)=>{const x=q=>40+q*2.6,y=p=>170-p*24,e=pts[pts.length-1];return `<svg viewBox='0 0 330 200' style='width:100%;max-width:380px;display:block;margin:8px auto'><path d='M40 10V170H310' stroke='currentColor' fill='none' opacity='.5'/><polyline fill='none' stroke='var(--ac)' stroke-width='2.5' points='${pts.map(([q,p])=>x(q)+','+y(p)).join(' ')}'/>${pts.map(([q,p])=>`<circle cx='${x(q)}' cy='${y(p)}' r='3.5' fill='var(--ac)'/><text x='${x(q)+5}' y='${y(p)-6}' font-size='10' fill='currentColor'>${q}</text>`).join('')}<text x='310' y='188' font-size='11' fill='currentColor' text-anchor='end'>Jumlah (Q)</text><text x='44' y='14' font-size='11' fill='currentColor'>Harga (P)</text><text x='${x(e[0])-6}' y='${y(e[1])+16}' font-size='13' font-weight='700' fill='var(--ac)' text-anchor='end'>${lb}</text></svg>`};
 /* ====== DATA: tambah minggu baru dengan menambah objek di array W ====== */
 const W=[{
-id:1,title:"Minggu 1: Fondasi Ilmu Ekonomi",
+id:1,title:"Materi 1: Fondasi Ilmu Ekonomi",
 sub:"Pengertian ilmu ekonomi, kebutuhan dan keinginan, kelangkaan, pilihan, biaya peluang, dan skala prioritas.",
 tujuan:["Menjelaskan pengertian, tujuan, dan manfaat ilmu ekonomi.","Membedakan kebutuhan dan keinginan serta mengelompokkan kebutuhan berdasarkan jenisnya.","Menjelaskan penyebab dan dampak kelangkaan.","Memahami konsep pilihan, pengorbanan, dan biaya peluang (opportunity cost).","Menyusun skala prioritas berdasarkan kebutuhan, anggaran, dan tingkat kepentingan."],
 pert:[
@@ -102,7 +102,7 @@ materi:`<h2>1. Pengertian ilmu ekonomi</h2>
 <p>Jika buku dan makan lebih penting saat itu, ia dapat membeli keduanya seharga Rp40.000 dan menunda aksesori.</p>
 <div class="box"><b>Kesimpulan:</b> ilmu ekonomi membantu Rina mengatur sumber daya terbatas untuk memenuhi kebutuhan yang dianggap paling penting.</div>`,
 eval:`<h2>Latihan</h2><div class="q"><p>Pada contoh kasus Rina, berapa kekurangan uangnya jika ia membeli semua yang diinginkan? Apa yang sebaiknya ia lakukan?</p><details><summary>Lihat jawaban</summary><p>Rp60.000 − Rp50.000 = Rp10.000. Rina perlu menentukan prioritas: membeli buku dan makan (Rp40.000) dan menunda aksesori.</p></details></div>
-<p class="mu">Kerjakan juga Evaluasi Minggu Pertama di halaman minggu.</p>`},
+<p class="mu">Kerjakan juga Evaluasi Materi Pertama di halaman materi.</p>`},
 {t:"Kebutuhan dan Keinginan",target:"Mampu membedakan dan mengelompokkan kebutuhan",
 materi:`<h2>1. Pengertian kebutuhan</h2>
 <p>Kebutuhan adalah segala sesuatu yang diperlukan manusia untuk mempertahankan kehidupan, menjalankan aktivitas, dan mencapai kesejahteraan. Contoh: makanan, pakaian, tempat tinggal, pendidikan, kesehatan, transportasi.</p>
@@ -220,7 +220,7 @@ tugas:`<h3>Analisis Keputusan Ekonomi dalam Kehidupan Sehari-hari</h3>
 <ul><li>Masalah ekonomi yang dihadapi.</li><li>Sumber daya yang tersedia.</li><li>Kebutuhan dan keinginan yang muncul.</li><li>Pilihan yang tersedia.</li><li>Biaya peluang dari pilihan yang diambil.</li><li>Skala prioritas yang digunakan.</li><li>Kesimpulan mengenai keputusan yang paling rasional.</li></ul>
 <p>Targetnya bukan hanya menghafal definisi, tetapi mampu menjelaskan alasan di balik suatu keputusan ekonomi.</p>`
 },{
-id:2,start:6,title:"Minggu 2: Perilaku Konsumen dan Produsen",
+id:2,start:6,title:"Materi 2: Perilaku Konsumen dan Produsen",
 sub:"Peran konsumen dan produsen, utilitas, faktor dan biaya produksi, serta penerimaan, laba, dan kerugian.",
 tujuan:["Menjelaskan pengertian dan peran konsumen serta produsen.","Menganalisis faktor yang memengaruhi perilaku konsumen.","Memahami konsep manfaat dan kepuasan konsumen.","Menjelaskan faktor produksi dan biaya produksi.","Menghitung penerimaan, laba, dan kerugian usaha sederhana."],
 pert:[
@@ -355,7 +355,7 @@ tugas:`<h3>Analisis Usaha Sederhana</h3>
 <ul><li>Nama dan jenis usaha.</li><li>Produk yang dijual.</li><li>Target konsumen.</li><li>Faktor yang memengaruhi keputusan konsumen.</li><li>Bahan baku, tenaga kerja, dan peralatan yang digunakan.</li><li>Perkiraan biaya produksi.</li><li>Harga jual dan perkiraan jumlah penjualan.</li><li>Perhitungan penerimaan.</li><li>Perhitungan laba atau kerugian.</li><li>Saran untuk meningkatkan efisiensi usaha.</li></ul>
 <p>Gunakan data nyata jika tersedia. Jika menggunakan perkiraan, tuliskan bahwa angka tersebut adalah asumsi.</p>`
 },{
-id:3,start:11,title:'Minggu 3: Permintaan dan Penawaran',
+id:3,start:11,title:'Materi 3: Permintaan dan Penawaran',
 sub:'Permintaan, penawaran, hukum dan kurvanya, serta pergerakan dan pergeseran kurva.',
 tujuan:['Menjelaskan pengertian permintaan dan penawaran.','Memahami hukum permintaan dan hukum penawaran.','Mengidentifikasi faktor-faktor yang memengaruhi permintaan dan penawaran.','Membedakan pergerakan sepanjang kurva dengan pergeseran kurva.','Membuat dan membaca tabel serta kurva permintaan dan penawaran.'],
 pert:[
@@ -464,7 +464,7 @@ eval:`<h2>Latihan analisis</h2>
 <div class='q'><p>4. Qd = 120 − 10P dan Qs = 20 + 10P. Pada harga Rp5.000, berapa Qd dan Qs? Apakah seimbang?</p><details><summary>Jawaban</summary><p>Qd = 120 − 10(5) = 70; Qs = 20 + 10(5) = 70. Ya, seimbang pada 70 unit.</p></details></div>`}
 ],
 rangkuman:`<ul><li>Permintaan: hubungan harga dengan jumlah yang ingin dan mampu dibeli konsumen.</li><li>Penawaran: hubungan harga dengan jumlah yang ingin dan mampu dijual produsen.</li><li>Harga barang itu sendiri menyebabkan pergerakan sepanjang kurva.</li><li>Faktor selain harga barang itu sendiri dapat menyebabkan pergeseran kurva.</li><li>Permintaan meningkat cenderung menaikkan harga dan jumlah keseimbangan jika penawaran tetap.</li><li>Penawaran meningkat cenderung menurunkan harga dan menaikkan jumlah keseimbangan jika permintaan tetap.</li></ul>
-<div class='box'>Selanjutnya: Minggu 4 — Keseimbangan Pasar dan Penerapannya.</div>`,
+<div class='box'>Selanjutnya: Materi 4 — Keseimbangan Pasar dan Penerapannya.</div>`,
 quiz:[
 {q:'Permintaan adalah ....',o:['seluruh barang yang diproduksi perusahaan','jumlah barang yang tersedia di gudang','jumlah barang yang ingin dan mampu dibeli pada berbagai tingkat harga','jumlah barang yang wajib dibeli konsumen','jumlah keuntungan produsen'],a:2},
 {q:'Menurut hukum permintaan, jika harga barang turun dan faktor lainnya tetap, jumlah yang diminta cenderung ....',o:['turun','naik','tetap selalu','menjadi nol','tidak dapat berubah'],a:1},
@@ -486,7 +486,7 @@ tugas:`<h3>Mengamati Permintaan dan Penawaran di Pasar</h3>
 <ul><li>Nama produk dan tempat penjualan.</li><li>Harga produk saat diamati.</li><li>Faktor yang dapat memengaruhi keputusan pembeli.</li><li>Faktor yang dapat memengaruhi keputusan penjual.</li><li>Prediksi jika harga produk naik.</li><li>Prediksi jika biaya produksi meningkat.</li><li>Kesimpulan tentang hubungan permintaan, penawaran, dan harga.</li></ul>
 <p>Jika memungkinkan, bandingkan harga pada dua waktu berbeda. Bedakan fakta yang benar-benar kamu amati dengan prediksi atau dugaanmu.</p>`
 },{
-id:4,start:16,title:'Minggu 4: Keseimbangan Pasar',
+id:4,start:16,title:'Materi 4: Keseimbangan Pasar',
 sub:'Keseimbangan pasar, menghitung harga dan jumlah keseimbangan, surplus dan kekurangan, serta studi kasus penerapan ekonomi.',
 tujuan:['Menjelaskan pengertian keseimbangan pasar, harga keseimbangan, dan jumlah keseimbangan.','Menghitung harga dan jumlah keseimbangan dari persamaan permintaan dan penawaran.','Membedakan surplus dan kekurangan barang beserta dampaknya.','Menganalisis pengaruh perubahan permintaan dan penawaran terhadap keseimbangan.','Menerapkan konsep ekonomi pada studi kasus kehidupan sehari-hari.'],
 pert:[
@@ -568,8 +568,8 @@ eval:`<h2>Analisis kasus</h2>
 <div class='q'><p>3. Apakah penjual sebaiknya langsung menaikkan harga?</p><details><summary>Jawaban</summary><p>Belum tentu. Penjual perlu mempertimbangkan daya beli siswa, biaya produksi, harga pesaing, serta kemungkinan menambah produksi. Harga lebih tinggi juga bisa membuat sebagian siswa tidak jadi membeli.</p></details></div>
 <div class='q'><p>4. Apa hubungan kasus ini dengan kelangkaan?</p><details><summary>Jawaban</summary><p>Es teh yang tersedia terbatas dibandingkan keinginan konsumen. Penjual harus menentukan penggunaan bahan, waktu, tenaga, dan modal secara efisien.</p></details></div>`}
 ],
-rangkuman:`<div class='tw'><table><tr><th>Minggu</th><th>Materi utama</th></tr><tr><td>1</td><td>Dasar ekonomi, kebutuhan, kelangkaan, pilihan, dan skala prioritas</td></tr><tr><td>2</td><td>Konsumen, produsen, produksi, biaya, pendapatan, laba, dan rugi</td></tr><tr><td>3</td><td>Permintaan, penawaran, kurva, dan faktor yang memengaruhinya</td></tr><tr><td>4</td><td>Keseimbangan pasar, perhitungan harga, surplus, kekurangan, dan studi kasus</td></tr></table></div>
-<div class='box'>Selamat! Setelah empat minggu ini kamu telah mempelajari fondasi ekonomi dasar. Langkah selanjutnya yang cocok: ekonomi mikro (elastisitas permintaan dan penawaran, struktur pasar, perilaku konsumen), lalu ekonomi makro (inflasi, pengangguran, pertumbuhan ekonomi, dan kebijakan pemerintah).</div>`,
+rangkuman:`<div class='tw'><table><tr><th>Materi</th><th>Materi utama</th></tr><tr><td>1</td><td>Dasar ekonomi, kebutuhan, kelangkaan, pilihan, dan skala prioritas</td></tr><tr><td>2</td><td>Konsumen, produsen, produksi, biaya, pendapatan, laba, dan rugi</td></tr><tr><td>3</td><td>Permintaan, penawaran, kurva, dan faktor yang memengaruhinya</td></tr><tr><td>4</td><td>Keseimbangan pasar, perhitungan harga, surplus, kekurangan, dan studi kasus</td></tr></table></div>
+<div class='box'>Selamat! Setelah empat materi ini kamu telah mempelajari fondasi ekonomi dasar. Langkah selanjutnya yang cocok: ekonomi mikro (elastisitas permintaan dan penawaran, struktur pasar, perilaku konsumen), lalu ekonomi makro (inflasi, pengangguran, pertumbuhan ekonomi, dan kebijakan pemerintah).</div>`,
 quiz:[
 {q:'Kondisi ketika jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan disebut ....',o:['Kelangkaan','Surplus','Keseimbangan pasar','Konsumsi','Produksi'],a:2},
 {q:'Jika jumlah penawaran lebih besar daripada jumlah permintaan, pasar mengalami ....',o:['Kekurangan','Surplus','Keseimbangan','Kelangkaan tenaga kerja','Peningkatan kebutuhan'],a:1},
@@ -600,17 +600,17 @@ function quiz(w){return w.quiz.map((x,i)=>`<div class="q"><b>${i+1}.</b> ${x.q}$
 function render0(){
  const [wi,pi,tab]=location.hash.slice(2).split("/");
  const w=W.find(x=>x.id==wi);let h="";
- if(!w){h=`<h1>Materi Ekonomi</h1><p class="mu">Pilih minggu pembelajaran.</p>`+W.map(w=>`<a class="card" href="#/${w.id}"><b>${w.title}</b><span>${w.pert.length} pertemuan · ${w.sub}</span></a>`).join("")}
+ if(!w){h=`<h1>Materi Ekonomi</h1><p class="mu">Pilih materi pembelajaran.</p>`+W.map(w=>`<a class="card" href="#/${w.id}"><b>${w.title}</b><span>${w.pert.length} pertemuan · ${w.sub}</span></a>`).join("")}
  else if(pi==="eval"){
-  h=`<div class="crumb">${L("","Beranda")} › ${L("/"+w.id,"Minggu "+w.id)}</div><h1>Evaluasi Minggu ${w.id}</h1><p class="mu">Coba jawab tanpa melihat rangkuman. Ketuk pilihan untuk memeriksa jawaban.</p><h2>Bagian 1 — Pilihan ganda</h2>${quiz(w)}<h2>Bagian 2 — Soal uraian</h2>`+w.uraian.map((u,i)=>`<div class="q"><b>${i+1}.</b> ${u.q}<details><summary>Pedoman jawaban</summary><p>${u.a}</p></details></div>`).join("")+`<h2>Tugas praktik akhir minggu</h2>${w.tugas}<div class="nav">${L("/"+w.id,"‹ Kembali")}<span></span></div>`}
+  h=`<div class="crumb">${L("","Beranda")} › ${L("/"+w.id,"Materi "+w.id)}</div><h1>Evaluasi Materi ${w.id}</h1><p class="mu">Coba jawab tanpa melihat rangkuman. Ketuk pilihan untuk memeriksa jawaban.</p><h2>Bagian 1 — Pilihan ganda</h2>${quiz(w)}<h2>Bagian 2 — Soal uraian</h2>`+w.uraian.map((u,i)=>`<div class="q"><b>${i+1}.</b> ${u.q}<details><summary>Pedoman jawaban</summary><p>${u.a}</p></details></div>`).join("")+`<h2>Tugas praktik akhir materi</h2>${w.tugas}<div class="nav">${L("/"+w.id,"‹ Kembali")}<span></span></div>`}
  else if(pi!==undefined){
   const i=+pi-1,p=w.pert[i];if(!p){location.hash="/"+w.id;return}const n=(w.start||1)+i;
   const t=tab==="e"?"e":"m";
-  h=`<div class="crumb">${L("","Beranda")} › ${L("/"+w.id,"Minggu "+w.id)} › Pertemuan ${n}</div><h1>Pertemuan ${n}</h1><p class="mu">${p.t}</p>
+  h=`<div class="crumb">${L("","Beranda")} › ${L("/"+w.id,"Materi "+w.id)} › Pertemuan ${n}</div><h1>Pertemuan ${n}</h1><p class="mu">${p.t}</p>
   <div class="tabs">${L(`/${w.id}/${pi}/m`,"Materi").replace("<a",t=="m"?'<a class="on"':"<a")}${L(`/${w.id}/${pi}/e`,"Evaluasi").replace("<a",t=="e"?'<a class="on"':"<a")}</div>${t=="m"?p.materi:p.eval}
   <div class="nav">${i>0?L(`/${w.id}/${i}/${t}`,"‹ Pertemuan "+(n-1)):"<span></span>"}${i<w.pert.length-1?L(`/${w.id}/${i+2}/${t}`,"Pertemuan "+(n+1)+" ›"):L(`/${w.id}/eval`,"Evaluasi Minggu ›")}</div>`}
  else{
-  h=`<div class="crumb">${L("","Beranda")} › Minggu ${w.id}</div><h1>${w.title}</h1><p class="mu">${w.sub}</p><h2>Tujuan pembelajaran</h2><ul>${w.tujuan.map(t=>`<li>${t}</li>`).join("")}</ul><h2>Pertemuan</h2>`+w.pert.map((p,i)=>`<a class="card" href="#/${w.id}/${i+1}/m"><b><span class="num">${(w.start||1)+i}</span>${p.t}</b><span>Target: ${p.target}</span></a>`).join("")+`<a class="card" href="#/${w.id}/eval"><b>Evaluasi Minggu ${w.id}</b><span>Pilihan ganda, uraian, dan tugas praktik</span></a><h2>Rangkuman</h2>${w.rangkuman}`}
+  h=`<div class="crumb">${L("","Beranda")} › Materi ${w.id}</div><h1>${w.title}</h1><p class="mu">${w.sub}</p><h2>Tujuan pembelajaran</h2><ul>${w.tujuan.map(t=>`<li>${t}</li>`).join("")}</ul><h2>Pertemuan</h2>`+w.pert.map((p,i)=>`<a class="card" href="#/${w.id}/${i+1}/m"><b><span class="num">${(w.start||1)+i}</span>${p.t}</b><span>Target: ${p.target}</span></a>`).join("")+`<a class="card" href="#/${w.id}/eval"><b>Evaluasi Materi ${w.id}</b><span>Pilihan ganda, uraian, dan tugas praktik</span></a><h2>Rangkuman</h2>${w.rangkuman}`}
  $.innerHTML=h;scrollTo(0,0);
 }
 document.addEventListener("click",e=>{const b=e.target.closest(".o");if(!b)return;const q=b.parentElement;if(q.dataset.done)return;q.dataset.done=1;q.querySelectorAll(".o").forEach(o=>{if(o.dataset.j==o.dataset.a)o.classList.add("ok");else if(o===b)o.classList.add("no")})});
@@ -647,18 +647,18 @@ function render(){
  const [wi,pi]=location.hash.slice(2).split('/'),w=W.find(x=>x.id==wi),ks=st('ekon-kuis',{}),done=st('ekon-done',{});
  if(!w){
   const tot=W.reduce((a,x)=>a+x.pert.length,0),dn=W.reduce((a,x)=>a+cnt(x),0);
-  $.innerHTML=`<div class='hero'><h1>Materi Ekonomi Dasar</h1><p>Belajar mandiri ${W.length} minggu: materi, latihan, evaluasi, dan kuis.</p>${bar(tot?Math.round(dn/tot*100):0)}<span class='mu'>${dn} dari ${tot} pertemuan selesai</span></div>`+W.map((x,k)=>{const s=x.start||1,c=cnt(x),q=ks[x.id];return `<a class='card' style='border-left:6px solid ${COL[k%4]}' href='#/${x.id}'><b>${x.title}</b><span>Pertemuan ${s}–${s+x.pert.length-1} · ${c}/${x.pert.length} selesai${q?` · kuis terbaik ${q.s}/${q.n}`:''}</span>${bar(Math.round(c/x.pert.length*100))}</a>`}).join('');
+  $.innerHTML=`<div class='hero'><h1>Materi Ekonomi Dasar</h1><p>Belajar mandiri ${W.length} materi: materi, latihan, evaluasi, dan kuis.</p>${bar(tot?Math.round(dn/tot*100):0)}<span class='mu'>${dn} dari ${tot} pertemuan selesai</span></div>`+W.map((x,k)=>{const s=x.start||1,c=cnt(x),q=ks[x.id];return `<a class='card' style='border-left:6px solid ${COL[k%4]}' href='#/${x.id}'><b>${x.title}</b><span>Pertemuan ${s}–${s+x.pert.length-1} · ${c}/${x.pert.length} selesai${q?` · kuis terbaik ${q.s}/${q.n}`:''}</span>${bar(Math.round(c/x.pert.length*100))}</a>`}).join('');
   scrollTo(0,0);return}
  if(pi==='kuis'){
   const K=KUIS[w.id]||[];
-  $.innerHTML=`<div class='crumb'>${L('','Beranda')} › ${L('/'+w.id,'Minggu '+w.id)} › Kuis</div><h1>Kuis Minggu ${w.id}</h1><p class='mu'>${K.length} soal dari materi minggu ini. Jawab semua soal, lalu tekan Periksa jawaban untuk melihat skor dan pembahasan.</p><div id='res'></div>`+K.map((x,i)=>`<div class='q kq' data-a='${x.a}'><b>${i+1}.</b> ${x.q}${x.o.map((o,j)=>`<button class='ko' data-j='${j}'>${'ABCD'[j]}. ${o}</button>`).join('')}<div class='pb' hidden><b>Pembahasan:</b> ${x.e}</div></div>`).join('')+`<button class='btn' id='cek'>Periksa jawaban</button>`;
+  $.innerHTML=`<div class='crumb'>${L('','Beranda')} › ${L('/'+w.id,'Materi '+w.id)} › Kuis</div><h1>Kuis Materi ${w.id}</h1><p class='mu'>${K.length} soal dari materi ini. Jawab semua soal, lalu tekan Periksa jawaban untuk melihat skor dan pembahasan.</p><div id='res'></div>`+K.map((x,i)=>`<div class='q kq' data-a='${x.a}'><b>${i+1}.</b> ${x.q}${x.o.map((o,j)=>`<button class='ko' data-j='${j}'>${'ABCD'[j]}. ${o}</button>`).join('')}<div class='pb' hidden><b>Pembahasan:</b> ${x.e}</div></div>`).join('')+`<button class='btn' id='cek'>Periksa jawaban</button>`;
   scrollTo(0,0);return}
  render0();
  if(pi===undefined){
   const c=cnt(w),q=ks[w.id],K=KUIS[w.id]||[];
   $.querySelector('p.mu').insertAdjacentHTML('afterend',bar(Math.round(c/w.pert.length*100))+`<span class='mu'>${c} dari ${w.pert.length} pertemuan selesai</span>`);
   $.querySelectorAll('a.card[href$="/m"]').forEach((a,i)=>{if(done[w.id+'/'+(i+1)])a.querySelector('b').insertAdjacentHTML('beforeend',' ✓')});
-  if(K.length)$.querySelector('a.card[href$="/eval"]').insertAdjacentHTML('beforebegin',`<a class='card' href='#/${w.id}/kuis'><b>Kuis Minggu ${w.id}</b><span>${K.length} soal dengan skor dan pembahasan${q?` · skor terbaik ${q.s}/${q.n}`:''}</span></a>`);
+  if(K.length)$.querySelector('a.card[href$="/eval"]').insertAdjacentHTML('beforebegin',`<a class='card' href='#/${w.id}/kuis'><b>Kuis Materi ${w.id}</b><span>${K.length} soal dengan skor dan pembahasan${q?` · skor terbaik ${q.s}/${q.n}`:''}</span></a>`);
  }else if(pi!=='eval'){
   const k=w.id+'/'+pi;
   $.querySelectorAll('.box').forEach(b=>{const t=b.textContent.trim(),c=/^Contoh/.test(t)?'bx-c':/^(Kesimpulan|Inti|Selamat)/.test(t)?'bx-k':/^(Catatan|Penting)/.test(t)?'bx-n':'';if(c)b.classList.add(c)});
@@ -689,10 +689,10 @@ function shell(){
  document.getElementById('prog').textContent=dn+' dari '+tot+' pertemuan selesai';
  let h=`<a class="si${wi?'':' on'}" href="#"><span class="n">⌂</span>Beranda</a>`;
  W.forEach(w=>{const on=w.id==wi,s=w.start||1;
-  h+=`<a class="si${on&&!pi?' on':''}" href="#/${w.id}"><span class="n">${w.id}</span><span>${w.title.replace(/^Minggu \d+:\s*/,'')}</span><em>${cnt(w)}/${w.pert.length}</em></a>`;
+  h+=`<a class="si${on&&!pi?' on':''}" href="#/${w.id}"><span class="n">${w.id}</span><span>${w.title.replace(/^Materi \d+:\s*/,'')}</span><em>${cnt(w)}/${w.pert.length}</em></a>`;
   if(on){w.pert.forEach((p,i)=>{h+=`<a class="si sub${pi==i+1?' on':''}" href="#/${w.id}/${i+1}/m">${done[w.id+'/'+(i+1)]?'✓ ':''}Pertemuan ${s+i}: ${p.t}</a>`});
-   if((KUIS[w.id]||[]).length)h+=`<a class="si ex${pi==='kuis'?' on':''}" href="#/${w.id}/kuis">Kuis minggu ${w.id}</a>`;
-   h+=`<a class="si ex${pi==='eval'?' on':''}" href="#/${w.id}/eval">Evaluasi minggu ${w.id}</a>`}});
+   if((KUIS[w.id]||[]).length)h+=`<a class="si ex${pi==='kuis'?' on':''}" href="#/${w.id}/kuis">Kuis materi ${w.id}</a>`;
+   h+=`<a class="si ex${pi==='eval'?' on':''}" href="#/${w.id}/eval">Evaluasi materi ${w.id}</a>`}});
  document.getElementById('side').innerHTML=h;document.body.classList.remove('open');
 }
 const tg=()=>document.body.classList.toggle('open');
